@@ -1,0 +1,34 @@
+.nav_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .nav_links {
+    min-width: 47.063rem;
+    display: flex;
+    justify-content: space-between;
+    a {
+      // font-family: var(--poppins);
+    }
+  }
+  .nav_phone {
+    width: 112px;
+    height: 28px;
+    font-size: 0.625rem;
+    display: flex;
+    align-items: center;
+    align-content: initial;
+    background: var(--color-primary);
+    justify-content: center;
+    // margin-inline: auto;
+    border-radius: 30px;
+    a {
+      color: #181818;
+      font-weight: 600;
+    }
+  }
+  .nav_burger {
+    display: flex;
+    align-items: center;
+    background-color: aquamarine;
+  }
+}

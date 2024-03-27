@@ -1,0 +1,29 @@
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+}
+.nav_phone {
+  width: 112px;
+  height: 28px;
+  font-size: 0.625rem;
+  display: flex;
+  align-items: center;
+  align-content: initial;
+  background: var(--color-primary);
+  justify-content: center;
+  // margin-inline: auto;
+  border-radius: 30px;
+  a {
+    color: #181818;
+    font-weight: 600;
+  }
+}
+.nav_burger {
+  flex: 1;
+}
+.logo {
+  flex: 1;
+}
