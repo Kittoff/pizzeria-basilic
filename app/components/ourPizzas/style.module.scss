@@ -1,15 +1,18 @@
-.pizzas_container {
-  display: grid;
-  grid-template-columns: 1fr 1fr; //   flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
-}
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  .category {
-    margin: 3.125em 0 0.938em 0;
-    font-size: 1.375rem;
+.our_pizzas {
+  margin-top: 50px;
+  .pizzas_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; //   flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .category {
+      margin: 3.125em 0 0.938em 0;
+      font-size: 1.375rem;
+    }
   }
 }
