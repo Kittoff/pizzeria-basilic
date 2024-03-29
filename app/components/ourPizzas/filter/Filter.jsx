@@ -1,82 +1,70 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./style.module.scss";
+import { motion } from "framer-motion";
 import Image from "next/image.js";
 import { useCollapse } from "react-collapsed";
 
-const config = {
-  duration: 1000,
-  onExpandStart: () => {
-    console.log("INFO: onExpandStart triggered.");
-  },
-  onExpandEnd: () => {
-    console.log("INFO: onExpandEnd triggered.");
-  },
-  onCollapseStart: () => {
-    console.log("INFO: onCollapseStart triggered.");
-  },
-  onCollapseEnd: () => {
-    console.log("INFO: onCollapseEnd triggered.");
-  },
-};
+const categories = [
+  "Classiques",
+  "Fromagères",
+  "Gourmandes",
+  "Délicieuses",
+  "Epicées",
+  "Végétariennes",
+  "Océanes",
+  "Bruschettas",
+];
+const defaultCategories = [
+  "Classiques",
+  "Fromagères",
+  "Gourmandes",
+  "Délicieuses",
+  "Epicées",
+  "Végétariennes",
+  "Océanes",
+  "Bruschettas",
+];
 
 const Filter = ({ onUpdateCategories }) => {
+  const config = {
+    duration: 1000,
+    onExpandStart: () => console.log("INFO: onExpandStart triggered."),
+    onExpandEnd: () => console.log("INFO: onExpandEnd triggered."),
+    onCollapseStart: () => console.log("INFO: onCollapseStart triggered."),
+    onCollapseEnd: () => console.log("INFO: onCollapseEnd triggered."),
+  };
+
   const { getCollapseProps, getToggleProps, isExpanded, setExpanded } =
     useCollapse(config);
-  const [selectedCategories, setSelectedCategories] = useState([
-    "Classiques",
-    "Fromagères",
-    "Gourmandes",
-    "Délicieuses",
-  ]);
+  const [selectedCategories, setSelectedCategories] =
+    useState(defaultCategories);
   const [allSelected, setAllSelected] = useState(true);
+  const collapseRef = useRef();
 
   const handleCategoryToggle = (category) => {
-    let updatedCategories;
-    if (selectedCategories.includes(category)) {
-      updatedCategories = selectedCategories.filter((cat) => cat !== category);
-    } else {
-      updatedCategories = [...selectedCategories, category];
-    }
+    const updatedCategories = selectedCategories.includes(category)
+      ? selectedCategories.filter((cat) => cat !== category)
+      : [...selectedCategories, category];
     setSelectedCategories(updatedCategories);
     onUpdateCategories(updatedCategories);
   };
 
   const handleAllToggle = () => {
-    if (allSelected) {
-      setSelectedCategories([]);
-      onUpdateCategories([]); // Appel lorsque "Toutes" est désélectionnée
-    } else {
-      setSelectedCategories([
-        "Classiques",
-        "Fromagères",
-        "Gourmandes",
-        "Délicieuses",
-      ]);
-      onUpdateCategories([
-        "Classiques",
-        "Fromagères",
-        "Gourmandes",
-        "Délicieuses",
-      ]); // Appel lorsque "Toutes" est sélectionnée
-    }
+    const updatedCategories = allSelected ? [] : defaultCategories;
+    setSelectedCategories(updatedCategories);
+    onUpdateCategories(updatedCategories);
     setAllSelected(!allSelected);
   };
-
-  const categories = ["Classiques", "Fromagères", "Gourmandes", "Délicieuses"];
 
   useEffect(() => {
     const allCategoriesSelected = categories.every((category) =>
       selectedCategories.includes(category)
     );
-
     setAllSelected(allCategoriesSelected);
-
     if (allCategoriesSelected) {
-      onUpdateCategories(selectedCategories); // Appel lorsque toutes les catégories sont sélectionnées
+      onUpdateCategories(selectedCategories);
     }
-  }, [selectedCategories, categories, onUpdateCategories]);
-
-  const collapseRef = useRef();
+  }, [selectedCategories, onUpdateCategories]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -84,7 +72,6 @@ const Filter = ({ onUpdateCategories }) => {
         setExpanded(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -92,56 +79,66 @@ const Filter = ({ onUpdateCategories }) => {
   }, [setExpanded]);
 
   return (
-    <>
-      <div
-        className={` ${styles.collapsible} ${styles.container}`}
-        ref={collapseRef}
+    <div
+      className={`${styles.collapsible} ${styles.container}`}
+      ref={collapseRef}
+    >
+      <motion.div
+        animate={{
+          width: isExpanded ? 335 : 200,
+          transition: {
+            duration: 1,
+            ease: "easeInOut",
+          },
+        }}
+        className={styles.button}
+        {...getToggleProps()}
       >
-        <div className={styles.button} {...getToggleProps()}>
-          Catégories{" "}
-          <Image
-            alt="filter edit image"
-            src={isExpanded ? "/close.png" : "/edit.svg"}
-            width={25}
-            height={25}
-          />
-        </div>
-        <div className={styles.content}>
-          <div {...getCollapseProps()} className={styles.test}>
-            <div className={styles.truc}>
-              <div>
+        Catégories{" "}
+        <Image
+          alt="filter edit image"
+          src={isExpanded ? "/close.svg" : "/edit.svg"}
+          width={25}
+          height={25}
+        />
+      </motion.div>
+      <div className={styles.content}>
+        <motion.div
+          animate={{
+            width: isExpanded ? 335 : 200,
+            transition: {
+              duration: 1,
+              ease: "easeInOut",
+            },
+          }}
+          {...getCollapseProps()}
+          className={styles.dropdown_content}
+        >
+          <div className={styles.checkbox_container}>
+            <div className={styles.checkboxes}>
+              <input
+                type="checkbox"
+                id="all"
+                checked={allSelected}
+                onChange={handleAllToggle}
+              />
+              <label htmlFor="all">Toutes</label>
+            </div>
+            {categories.map((category, index) => (
+              <div key={index} className={styles.checkboxes}>
                 <input
                   type="checkbox"
-                  id="all"
-                  checked={allSelected}
-                  onChange={handleAllToggle}
+                  id={category}
+                  checked={selectedCategories.includes(category)}
+                  onChange={() => handleCategoryToggle(category)}
                 />
-                <label htmlFor="all">Toutes</label>
+                <label htmlFor={category}>{category}</label>
               </div>
-              {categories.map((category, index) => (
-                <div key={index}>
-                  <input
-                    type="checkbox"
-                    id={category}
-                    checked={selectedCategories.includes(category)}
-                    onChange={() => handleCategoryToggle(category)}
-                  />
-                  <label htmlFor={category}>{category}</label>
-                </div>
-              ))}
-            </div>
+            ))}
           </div>
-        </div>
-        {/* <div className={styles.selectedCategories}>
-          Catégories sélectionnées :
-          {selectedCategories.length === 0
-            ? " Aucune sélection"
-            : selectedCategories.map((category, index) => (
-                <span key={index}>{category}, </span>
-              ))}
-        </div> */}
+        </motion.div>
       </div>
-    </>
+    </div>
   );
 };
 
