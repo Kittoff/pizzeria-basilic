@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./style.module.scss";
 import Burger from "./burger";
 import Stairs from "./stairs";
@@ -9,6 +9,14 @@ import Image from "next/image.js";
 
 export default function Index() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (menuIsOpen) {
+      document.body.classList.add("overflow-y-hidden");
+    } else {
+      document.body.classList.remove("overflow-y-hidden");
+    }
+  }, [menuIsOpen]);
 
   return (
     <div className={styles.header}>
