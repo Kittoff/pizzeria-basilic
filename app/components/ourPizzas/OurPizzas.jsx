@@ -325,7 +325,7 @@ const pizzas = [
       {
         id: 25,
         name: "pancetta",
-        price: 10,
+        price: { grande: 10 },
         ingredients: [
           "crème",
           "mozza",
@@ -338,13 +338,13 @@ const pizzas = [
       {
         id: 26,
         name: "quadri",
-        price: 9,
+        price: { grande: 9 },
         ingredients: ["crème", "mozza", "chèvre", "gorgonzola", "miel", "noix"],
       },
       {
         id: 27,
         name: "bettina",
-        price: 10,
+        price: { grande: 10 },
         ingredients: [
           "sauce tomate",
           "mozza",
@@ -356,13 +356,13 @@ const pizzas = [
       {
         id: 28,
         name: "modena",
-        price: 9,
+        price: { grande: 9 },
         ingredients: ["sauce tomate", "mozza", "coppa", "parmesan", "pesto"],
       },
       {
         id: 29,
         name: "cabanon",
-        price: 9,
+        price: { grande: 9 },
         ingredients: [
           "crème",
           "mozza",
@@ -374,7 +374,7 @@ const pizzas = [
       {
         id: 30,
         name: "tout fromage",
-        price: 10,
+        price: { grande: 10 },
         ingredients: ["crème", "mozza", "gorgonzola", "reblochon", "chèvre"],
       },
     ],
@@ -409,6 +409,7 @@ const OurPizzas = () => {
                     big_price={pizza.price.grande}
                     small_price={pizza.price.petite}
                     ingredients={pizza.ingredients}
+                    price={pizza.price}
                   />
                 ))}
               </div>

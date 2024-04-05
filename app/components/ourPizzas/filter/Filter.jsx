@@ -3,6 +3,7 @@ import styles from "./style.module.scss";
 import { motion } from "framer-motion";
 import Image from "next/image.js";
 import { useCollapse } from "react-collapsed";
+import Smile from "../../smile/index.jsx";
 
 const categories = [
   "Classiques",
@@ -14,18 +15,16 @@ const categories = [
   "Océanes",
   "Bruschettas",
 ];
-const defaultCategories = [
-  "Classiques",
-  "Fromagères",
-  "Gourmandes",
-  "Délicieuses",
-  "Epicées",
-  "Végétariennes",
-  "Océanes",
-  "Bruschettas",
-];
+
+const defaultCategories = [...categories];
+
+const variants = {
+  open: { opacity: 1, y: 0 },
+  close: { opacity: 0, y: 20 },
+};
 
 const Filter = ({ onUpdateCategories }) => {
+  const [startAnimation, setStartAnimation] = useState(false);
   const config = {
     duration: 1000,
     onExpandStart: () => console.log("INFO: onExpandStart triggered."),
@@ -49,6 +48,10 @@ const Filter = ({ onUpdateCategories }) => {
     onUpdateCategories(updatedCategories);
   };
 
+  const handleClick = () => {
+    setStartAnimation(!startAnimation);
+  };
+
   const handleAllToggle = () => {
     const updatedCategories = allSelected ? [] : defaultCategories;
     setSelectedCategories(updatedCategories);
@@ -70,6 +73,7 @@ const Filter = ({ onUpdateCategories }) => {
     const handleClickOutside = (event) => {
       if (collapseRef.current && !collapseRef.current.contains(event.target)) {
         setExpanded(false);
+        setStartAnimation(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -82,34 +86,32 @@ const Filter = ({ onUpdateCategories }) => {
     <div
       className={`${styles.collapsible} ${styles.container}`}
       ref={collapseRef}
+      onClick={() => handleClick()}
     >
       <motion.div
         animate={{
           width: isExpanded ? 335 : 200,
-          transition: {
-            duration: 1,
-            ease: "easeInOut",
-          },
+          transition: { duration: 1, ease: "easeInOut" },
         }}
+        onAnimationComplete={() => console.log("fifni")}
         className={styles.button}
         {...getToggleProps()}
       >
-        Catégories{" "}
-        <Image
+        {/* <div className={styles.test}> */}
+        Catégories <Smile startAnimation={startAnimation} />
+        {/* </div> */}
+        {/* <Image
           alt="filter edit image"
           src={isExpanded ? "/close.svg" : "/edit.svg"}
           width={25}
           height={25}
-        />
+        /> */}
       </motion.div>
       <div className={styles.content}>
         <motion.div
           animate={{
             width: isExpanded ? 335 : 200,
-            transition: {
-              duration: 1,
-              ease: "easeInOut",
-            },
+            transition: { duration: 1, ease: "easeInOut" },
           }}
           {...getCollapseProps()}
           className={styles.dropdown_content}
@@ -125,7 +127,19 @@ const Filter = ({ onUpdateCategories }) => {
               <label htmlFor="all">Toutes</label>
             </div>
             {categories.map((category, index) => (
-              <div key={index} className={styles.checkboxes}>
+              <motion.div
+                variants={variants}
+                animate={isExpanded ? "open" : "close"}
+                initial={{ opacity: 0, y: 20 }}
+                transition={{
+                  delay: isExpanded
+                    ? 0.12 * index
+                    : 0.06 * (categories.length - index - 1),
+                  staggerDirection: isExpanded ? 1 : -1,
+                }}
+                key={index}
+                className={styles.checkboxes}
+              >
                 <input
                   type="checkbox"
                   id={category}
@@ -133,7 +147,7 @@ const Filter = ({ onUpdateCategories }) => {
                   onChange={() => handleCategoryToggle(category)}
                 />
                 <label htmlFor={category}>{category}</label>
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>

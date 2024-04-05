@@ -3,7 +3,7 @@ import { interpolate } from "flubber";
 import React, { useState, useEffect } from "react";
 import { motion, animate, useMotionValue, useTransform } from "framer-motion";
 
-export default function SVGMorph({ paths }) {
+export default function SVGMorph({ paths, startAnimation }) {
   const [pathIndex, setPathIndex] = useState(0);
   const progress = useMotionValue(pathIndex);
 
@@ -13,23 +13,22 @@ export default function SVGMorph({ paths }) {
   });
 
   useEffect(() => {
-    const animation = animate(progress, pathIndex, {
-      duration: 0.4,
-      ease: "easeInOut",
-      delay: 0.5,
-      onComplete: () => {
-        if (pathIndex === paths.length - 1) {
-          progress.set(0);
-          setPathIndex(1);
-        } else {
-          setPathIndex(pathIndex + 1);
-        }
-      },
-    });
-    return () => {
-      animation.stop();
-    };
-  }, [pathIndex]);
+    let animation;
+    if (startAnimation && pathIndex < paths.length - 1) {
+      animation = animate(progress, pathIndex + 1, {
+        duration: 1.5,
+        delay: -0.5,
+        ease: "easeInOut",
+      });
+    } else if (!startAnimation) {
+      console.log("coucou");
+      animation = animate(progress, pathIndex - 1, {
+        duration: 1,
+        // delay: 0.3,
+        ease: "easeInOut",
+      });
+    }
+  }, [startAnimation, pathIndex, paths.length, progress]);
 
-  return <motion.path fill="white" d={path} />;
+  return <motion.path fill="#181818" d={path} />;
 }
