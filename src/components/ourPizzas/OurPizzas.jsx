@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import styles from "./style.module.scss";
 import Image from "next/image.js";
-import Title from "@/app/utils/sectionTitle/Title.jsx";
+import Title from "@/src/utils/sectionTitle/Title.jsx";
 import Filter from "./filter/Filter.jsx";
 import PizzaCard from "./pizzaCard/PizzaCard.jsx";
 

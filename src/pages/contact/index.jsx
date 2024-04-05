@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./style.module.scss";
-import Title from "../utils/sectionTitle/Title.jsx";
-import Hours from "../components/contact/hours/Hours.jsx";
-import Contacts from "../components/contact/contacts/Contacts.jsx";
-import Maps from "../components/contact/maps/Maps.jsx";
+import Title from "@/src/utils/sectionTitle/Title.jsx";
+import Hours from "@/src/components/contact/hours/Hours.jsx";
+import Contacts from "@/src/components/contact/contacts/Contacts.jsx";
+import Maps from "@/src/components/contact/maps/Maps.jsx";
 
 const Contact = () => {
   return (

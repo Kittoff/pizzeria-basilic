@@ -1,12 +1,15 @@
 import React from "react";
 import styles from "./style.module.scss";
 import Image from "next/image.js";
-import { inter } from "@/app/utils/font.jsx";
+import { inter } from "@/src/utils/font.jsx";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({ subsets: ["latin"], weight: ["400"] });
 const Contacts = () => {
   return (
     <div className={styles.contacts}>
       <h2 className={inter.className}>Contacts</h2>
-      <div className={styles.contacts_wrapper}>
+      <div className={`${styles.contacts_wrapper} ${poppins.className}`}>
         <div className={`${styles.phone} ${styles.infos_wrapper}`}>
           <Image
             className={styles.icon}

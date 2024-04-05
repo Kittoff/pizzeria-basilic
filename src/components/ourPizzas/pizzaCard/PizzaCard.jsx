@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./style.module.scss";
 import Image from "next/image.js";
-import { inter } from "@/app/utils/font.jsx";
+import { inter } from "@/src/utils/font.jsx";
 
 const PizzaCard = ({ name, ingredients, small_price, big_price, price }) => {
   const formatIngredients = (elements) => {

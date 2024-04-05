@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import Image from "next/image.js";
 import { useCollapse } from "react-collapsed";
 import Smile from "../../smile/index.jsx";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({ subsets: ["latin"], weight: ["400"] });
 
 const categories = [
   "Classiques",
@@ -84,7 +87,7 @@ const Filter = ({ onUpdateCategories }) => {
 
   return (
     <div
-      className={`${styles.collapsible} ${styles.container}`}
+      className={`${styles.collapsible} ${styles.container} ${poppins.className}`}
       ref={collapseRef}
       onClick={() => handleClick()}
     >
@@ -93,7 +96,6 @@ const Filter = ({ onUpdateCategories }) => {
           width: isExpanded ? 335 : 200,
           transition: { duration: 1, ease: "easeInOut" },
         }}
-        onAnimationComplete={() => console.log("fifni")}
         className={styles.button}
         {...getToggleProps()}
       >
