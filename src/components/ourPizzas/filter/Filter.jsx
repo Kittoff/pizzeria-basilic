@@ -87,7 +87,7 @@ const Filter = ({ onUpdateCategories }) => {
 
   return (
     <div
-      className={`${styles.collapsible} ${styles.container} ${poppins.className}`}
+      className={`${styles.collapsible} filter-container relative w-[200px] ${poppins.className}`}
       ref={collapseRef}
       onClick={() => handleClick()}
     >
@@ -96,7 +96,7 @@ const Filter = ({ onUpdateCategories }) => {
           width: isExpanded ? 335 : 200,
           transition: { duration: 1, ease: "easeInOut" },
         }}
-        className={styles.button}
+        className="bg-primary flex w-[12.5rem] h-[2.875rem] items-center pl-[2.25em] pr-[1.25em] content-between rounded-2xl text-[18px] font-extrabold text-bg select-none z-[1] relative"
         {...getToggleProps()}
       >
         {/* <div className={styles.test}> */}
@@ -109,24 +109,33 @@ const Filter = ({ onUpdateCategories }) => {
           height={25}
         /> */}
       </motion.div>
-      <div className={styles.content}>
+      <div className="w-[200px]">
         <motion.div
           animate={{
             width: isExpanded ? 335 : 200,
             transition: { duration: 1, ease: "easeInOut" },
           }}
           {...getCollapseProps()}
-          className={styles.dropdown_content}
+          className="box-border bg-primary w-[200px] relative -top-[14px] rounded-b-2xl "
         >
-          <div className={styles.checkbox_container}>
-            <div className={styles.checkboxes}>
+          <div
+            className={`${styles.checkbox_container} h-[400px] flex flex-col content-evenly p-[15px]`}
+          >
+            <div
+              className={`${styles.checkboxes} flex items-center bg-customWhite rounded-2xl text-bg w-[200px] `}
+            >
               <input
                 type="checkbox"
                 id="all"
                 checked={allSelected}
                 onChange={handleAllToggle}
               />
-              <label htmlFor="all">Toutes</label>
+              <label
+                className="after:w-[200px] after:h-[32px] after:bg-transparent after:absolute after:left-[15px] after:rounded-2xl -mt-[4px]"
+                htmlFor="all"
+              >
+                Toutes
+              </label>
             </div>
             {categories.map((category, index) => (
               <motion.div
@@ -140,7 +149,7 @@ const Filter = ({ onUpdateCategories }) => {
                   staggerDirection: isExpanded ? 1 : -1,
                 }}
                 key={index}
-                className={styles.checkboxes}
+                className=" flex items-center bg-customWhite rounded-2xl text-bg w-[200px] "
               >
                 <input
                   type="checkbox"
@@ -148,7 +157,12 @@ const Filter = ({ onUpdateCategories }) => {
                   checked={selectedCategories.includes(category)}
                   onChange={() => handleCategoryToggle(category)}
                 />
-                <label htmlFor={category}>{category}</label>
+                <label
+                  className="after:w-[200px] after:h-[32px] after:bg-transparent after:absolute after:left-[15px] after:rounded-2xl -mt-[4px]"
+                  htmlFor={category}
+                >
+                  {category}
+                </label>
               </motion.div>
             ))}
           </div>

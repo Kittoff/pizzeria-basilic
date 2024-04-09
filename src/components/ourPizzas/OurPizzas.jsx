@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import styles from "./style.module.scss";
 import Image from "next/image.js";
 import Title from "@/src/utils/sectionTitle/Title.jsx";
 import Filter from "./filter/Filter.jsx";
@@ -391,17 +390,18 @@ const OurPizzas = () => {
   const filteredPizzas = pizzas.filter((categorie) =>
     selectedCategories.includes(categorie.category)
   );
-
   return (
-    <div className={styles.our_pizzas}>
+    <div className="mt-[50px]">
       <Title title="Nos Pizzas" />
       <Filter onUpdateCategories={handleCategoriesUpdate} />
       <div className="pizza-card">
-        <div className={styles.card}>
+        <div className="flex flex-col items-center">
           {filteredPizzas.map((category) => (
             <div key={category.category}>
-              <h1 className={styles.category}>{category.category}</h1>
-              <div className={styles.pizzas_container}>
+              <h1 className="mt-[3.125em] mb-[0.938em] text-[1.375rem]">
+                {category.category}
+              </h1>
+              <div className="grid grid-cols-[1fr,1fr] gap-[20px] content-between">
                 {category.pizzas.map((pizza) => (
                   <PizzaCard
                     key={pizza.id}

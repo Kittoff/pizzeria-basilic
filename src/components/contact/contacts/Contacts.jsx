@@ -1,44 +1,47 @@
 import React from "react";
-import styles from "./style.module.scss";
-import Image from "next/image.js";
 import { inter } from "@/src/utils/font.jsx";
-import { Poppins } from "next/font/google";
+import Image from "next/image.js";
 
-const poppins = Poppins({ subsets: ["latin"], weight: ["400"] });
 const Contacts = () => {
   return (
-    <div className={styles.contacts}>
-      <h2 className={inter.className}>Contacts</h2>
-      <div className={`${styles.contacts_wrapper} ${poppins.className}`}>
-        <div className={`${styles.phone} ${styles.infos_wrapper}`}>
+    <div className="bg-primary w-[10.438rem] h-[10.438rem] flex flex-col items-center text-bg">
+      <h2 className={`${inter.className} xs:text-[1.875rem] font-bold`}>
+        Contacts
+      </h2>
+      <div className="flex flex-col justify-between pb-2 h-full pl-2">
+        <div className="flex items-center">
           <Image
-            className={styles.icon}
+            className="mr-1"
             alt="phone icon"
             src="/phone.png"
             width={15}
             height={15}
-          />{" "}
-          05 57 54 57 17
+          />
+          <span className="text-12">05 57 54 57 17</span>
         </div>
-        <div className={`${styles.mail} ${styles.infos_wrapper}`}>
+        <div className="flex items-center">
           <Image
-            className={styles.icon}
+            className="mr-1"
             alt="arobase icon"
             src="/mail.png"
             width={15}
             height={15}
           />
-          <a href="mailto:basilic.pizza@gmail.com">basilic.pizza@gmail.com</a>
+          <a href="mailto:basilic.pizza@gmail.com" className="text-[0.7rem]">
+            basilic.pizza@gmail.com
+          </a>
         </div>
-        <div className={`${styles.address} ${styles.infos_wrapper}`}>
+        <div className="flex items-center">
           <Image
-            className={styles.icon}
+            className="mr-1"
             alt="pin location icon"
             src="/pin.png"
             width={20}
             height={20}
           />
-          29 AVENUE DU GENERAL DE GAULLE 33550 LANGOIRAN
+          <span className="text-[0.6rem]">
+            29 AVENUE DU GENERAL DE GAULLE 33550 LANGOIRAN
+          </span>
         </div>
       </div>
     </div>
