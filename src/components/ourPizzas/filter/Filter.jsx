@@ -120,9 +120,10 @@ const Filter = ({ onUpdateCategories }) => {
         >
           <div
             className={`${styles.checkbox_container} h-[400px] flex flex-col content-evenly p-[15px]`}
+            onClick={(e) => e.stopPropagation()}
           >
             <div
-              className={`${styles.checkboxes} flex items-center bg-customWhite rounded-2xl text-bg w-[200px] `}
+              className={`${styles.checkboxes} flex items-center bg-customWhite rounded-2xl text-bg w-[200px] mb-2`}
             >
               <input
                 type="checkbox"
@@ -149,7 +150,7 @@ const Filter = ({ onUpdateCategories }) => {
                   staggerDirection: isExpanded ? 1 : -1,
                 }}
                 key={index}
-                className=" flex items-center bg-customWhite rounded-2xl text-bg w-[200px] "
+                className=" flex items-center bg-customWhite rounded-2xl text-bg w-[200px] mb-2"
               >
                 <input
                   type="checkbox"
