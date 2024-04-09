@@ -126,6 +126,7 @@ const Filter = ({ onUpdateCategories }) => {
               className={`${styles.checkboxes} flex items-center bg-customWhite rounded-2xl text-bg w-[200px] mb-2`}
             >
               <input
+                className="box-border w-[20px] h-[20px] m-[6px] p-0 appearance-none bg-transparent outline-none mr-[25px] border-s-bg rounded-full border-2 ring-offset-0 focus:ring-0 focus:shadow-none"
                 type="checkbox"
                 id="all"
                 checked={allSelected}
@@ -153,6 +154,7 @@ const Filter = ({ onUpdateCategories }) => {
                 className=" flex items-center bg-customWhite rounded-2xl text-bg w-[200px] mb-2"
               >
                 <input
+                  className="box-border w-[20px] h-[20px] m-[6px] p-0 appearance-none bg-transparent outline-none mr-[25px] border-s-bg rounded-full border-2 ring-offset-0 focus:ring-0 focus:shadow-none"
                   type="checkbox"
                   id={category}
                   checked={selectedCategories.includes(category)}
