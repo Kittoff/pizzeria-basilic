@@ -21,7 +21,7 @@ html {
   background-image: url("/bgmobile.png");
   background-repeat: repeat-y;
   /* background-size: cover; */
-  color: white;
+  color: #f4f4f4;
 }
 .wrapper {
   max-width: 20.938rem;

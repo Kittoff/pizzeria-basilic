@@ -3,8 +3,7 @@ import "../globals.css";
 import { AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Header from "../components/header/index.jsx";
-// import "@/styles/styles.scss";
-
+import "@/src/styles/styles.scss";
 export default function App({ Component, pageProps, router }) {
   return (
     <div className="main">
