@@ -81,7 +81,7 @@ const SVG = ({ height, width }) => {
     `;
 
   return (
-    <motion.svg className={styles.svgCurve} {...anim(translate)}>
+    <motion.svg className={`${styles.svgCurve}`} {...anim(translate)}>
       <motion.path {...anim(curve(initialPath, targetPath))} />
     </motion.svg>
   );

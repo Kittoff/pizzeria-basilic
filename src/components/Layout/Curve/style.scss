@@ -7,9 +7,9 @@
     pointer-events: none;
     left: 0;
     top: 0;
+    // z-index: 997;
   }
   .background {
-    background-color: black;
     transition: opacity 0s linear 0.1s;
   }
   .route {

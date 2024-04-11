@@ -8,7 +8,7 @@ export const testimonials = [
     name: "Dikshyanta Aryal",
     profession: "Dancer",
     testimonial:
-      "Kalachhetra has been instrumental in bridging the gap between artists and consumers. Through this platform, I have been able to showcase my dance performances, connect with event organizers, and even secure performance opportunities. It has provided a dynamic space for artists to grow and create meaningful connections.",
+      "Kalachhetra has been instrumental in bridging the gap between artists and consumers. Through this platform",
   },
   {
     img: Sulav,
@@ -22,6 +22,6 @@ export const testimonials = [
     name: "Aayush Shrestha",
     profession: "Musician",
     testimonial:
-      "As a musician, Kalachhetra has been a game-changer for me. It has allowed me to showcase my music, collaborate with other artists, and connect with music lovers who appreciate my work. The platform's user-friendly interface and the supportive community make it an ideal place for artists like me to thrive.",
+      "As a musician, Kalachhetra has been a game-changer for me. It has allowed me to showcase my music, collaborate with other artists, and connect with music lovers who appreciate my work. The platform's user-friendly interface and the supportive community make it an ideal place for artists like me to thriveAs a musician, Kalachhetra has been a game-changer for me. It has allowed me to showcase my music, collaborate with other artists, and connect with music lovers who appreciate my work. The platform's user-friendly interface and the supportive community make it an ideal place for artists like me to thriveAs a musician, Kalachhetra has been a game-changer for me. It has allowed me to showcase my music, collaborate with other artists, and connect with music lovers who appreciate my work. The platform's user-friendly interface and the supportive community make it an ideal place for artists like me to thriveAs a musician, Kalachhetra has been a game-changer for me. It has allowed me to showcase my music, collaborate with other artists, and connect with music lovers who appreciate my work. The platform's user-friendly interface and the supportive community make it an ideal place for artists like me to thrive.",
   },
 ];

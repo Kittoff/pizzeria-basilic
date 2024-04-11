@@ -18,8 +18,10 @@
 body,
 html {
   /* background-color: var(--color-bg); */
-  background-image: url("/bgmobile.png");
-  background-repeat: repeat-y;
+  background-image: url("/bg3.svg");
+  /* background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; */
   /* background-size: cover; */
   color: #f4f4f4;
 }

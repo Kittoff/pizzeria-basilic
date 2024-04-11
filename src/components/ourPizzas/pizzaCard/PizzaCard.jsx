@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./style.module.scss";
 import Image from "next/image.js";
 import { inter } from "@/src/utils/font.jsx";
+import { motion } from "framer-motion";
 
 const PizzaCard = ({ name, ingredients, small_price, big_price, price }) => {
   const formatIngredients = (elements) => {
@@ -50,7 +51,13 @@ const PizzaCard = ({ name, ingredients, small_price, big_price, price }) => {
     }
   };
   return (
-    <div>
+    <motion.div
+      className="pizza-card"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className={` ${inter.className} ${styles.card_container}`}>
         <div className={styles.card_image}>
           <Image
@@ -69,30 +76,9 @@ const PizzaCard = ({ name, ingredients, small_price, big_price, price }) => {
           </div>
         </div>
 
-        <div className={styles.footer}>
-          {verifyPrice(price)}
-          {/* <div className={styles.pizza_size}>
-            <div className={styles.big}>
-              <div className={styles.title}>Grande</div>
-              <div className={styles.price}>{big_price}€</div>
-            </div>
-            <div className={styles.card_delimiter}>
-              <Image
-                src="/delimiter_card.svg"
-                width={2}
-                height={10}
-                alt="pizza card delimiter"
-              />
-            </div>
-            <div className={styles.small}>
-              <div className={styles.title}>Petite</div>
-
-              <div className={styles.price}>{small_price}€</div>
-            </div>
-          </div> */}
-        </div>
+        <div className={styles.footer}>{verifyPrice(price)}</div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
