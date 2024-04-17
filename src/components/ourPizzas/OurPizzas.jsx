@@ -393,15 +393,17 @@ const OurPizzas = () => {
   return (
     <div className="mt-[50px]">
       <Title title="Nos Pizzas" />
-      <Filter onUpdateCategories={handleCategoriesUpdate} />
+      <div className="sm:hidden">
+        <Filter onUpdateCategories={handleCategoriesUpdate} />
+      </div>
       <div className="pizza-card">
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center sm:items-stretch">
           {filteredPizzas.map((category) => (
             <div key={category.category}>
               <h1 className="mt-[3.125em] mb-[0.938em] text-[1.375rem]">
                 {category.category}
               </h1>
-              <div className="grid grid-cols-[1fr,1fr] gap-[20px] content-between">
+              <div className="grid grid-cols-[1fr,1fr] gap-[20px] content-between  sm:grid-cols-[2fr,2fr,1fr]">
                 {category.pizzas.map((pizza) => (
                   <PizzaCard
                     key={pizza.id}

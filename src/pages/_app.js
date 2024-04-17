@@ -7,7 +7,7 @@ import "@/src/styles/styles.scss";
 export default function App({ Component, pageProps, router }) {
   return (
     <div className="main">
-      <div className="wrapper">
+      <div className="w-[335px] m-auto  sm:w-[635px]">
         <Header />
         {/* <div className="header">
           <Link href="/">Home</Link>

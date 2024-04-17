@@ -12,14 +12,16 @@ import Image from "next/image.js";
 const Hero = () => {
   return (
     <main
-      className={`${urbanist.className} min-h-[75vh] flex flex-col items-center`}
+      className={`${urbanist.className} min-h-[75vh] flex flex-col items-center `}
     >
-      <div className="pt-[154px] flex xs:flex-col items-center">
-        <h1 className="text-[38px] font-bold">
+      <div className="pt-[154px] flex flex-col items-center ">
+        <h1 className="text-[38px] font-bold sm:text-[50px]">
           A chaque bouchée, un peu d’
           <span className="text-primary">Italie!</span>
         </h1>
-        <p className={`${poppins.className} mt-11 text-[0.75rem]`}>
+        <p
+          className={`${poppins.className} mt-11 text-[0.75rem] sm:text-[15px]`}
+        >
           Nos pizzas vous invitent à une expérience chaleureuse et délicieuse.
           Elles vous enveloppent de saveurs authentiques, vous transportant
           instantanément en Italie.

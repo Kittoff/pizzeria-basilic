@@ -48,7 +48,10 @@ export default function Curve({ children, backgroundColor }) {
       style={{ backgroundColor }}
     >
       <div
-        style={{ opacity: dimensions.width == null ? 1 : 0 }}
+        style={{
+          opacity: dimensions.width == null ? 1 : 0,
+          height: "100vh - 300",
+        }}
         className={styles.background}
       />
       <motion.p

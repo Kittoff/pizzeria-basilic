@@ -3,8 +3,8 @@ import Title from "@/src/utils/sectionTitle/Title.jsx";
 import React from "react";
 import styles from "./style.module.scss";
 import Curve from "@/src/components/Layout/Curve/index.jsx";
-import Testimonial from "@/src/components/testimonials/Testimonial.jsx";
-
+// import Testimonial from "@/src/components/testimonials/Testimonial.jsx";
+import { Testimonial } from "@/src/components/testimonials/Testimonial2.jsx";
 const News = () => {
   return (
     <main className="mt-[5.625em]">

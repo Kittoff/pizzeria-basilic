@@ -15,7 +15,7 @@ const Contact = () => {
           <Hours />
           <Contacts />
         </div>
-        <div className={styles.hours}>
+        <div className="w-[334px] h-full sm:w-full ">
           <Maps />
         </div>
       </Curve>
