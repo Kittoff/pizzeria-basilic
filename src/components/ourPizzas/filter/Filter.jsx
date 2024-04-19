@@ -26,14 +26,10 @@ const variants = {
   close: { opacity: 0, y: 20 },
 };
 
-const Filter = ({ onUpdateCategories }) => {
+const Filter = ({ onUpdateCategoriesMobile }) => {
   const [startAnimation, setStartAnimation] = useState(false);
   const config = {
     duration: 1000,
-    onExpandStart: () => console.log("INFO: onExpandStart triggered."),
-    onExpandEnd: () => console.log("INFO: onExpandEnd triggered."),
-    onCollapseStart: () => console.log("INFO: onCollapseStart triggered."),
-    onCollapseEnd: () => console.log("INFO: onCollapseEnd triggered."),
   };
 
   const { getCollapseProps, getToggleProps, isExpanded, setExpanded } =
@@ -48,7 +44,7 @@ const Filter = ({ onUpdateCategories }) => {
       ? selectedCategories.filter((cat) => cat !== category)
       : [...selectedCategories, category];
     setSelectedCategories(updatedCategories);
-    onUpdateCategories(updatedCategories);
+    onUpdateCategoriesMobile(updatedCategories);
   };
 
   const handleClick = () => {
@@ -58,7 +54,7 @@ const Filter = ({ onUpdateCategories }) => {
   const handleAllToggle = () => {
     const updatedCategories = allSelected ? [] : defaultCategories;
     setSelectedCategories(updatedCategories);
-    onUpdateCategories(updatedCategories);
+    onUpdateCategoriesMobile(updatedCategories);
     setAllSelected(!allSelected);
   };
 
@@ -68,9 +64,9 @@ const Filter = ({ onUpdateCategories }) => {
     );
     setAllSelected(allCategoriesSelected);
     if (allCategoriesSelected) {
-      onUpdateCategories(selectedCategories);
+      onUpdateCategoriesMobile(selectedCategories);
     }
-  }, [selectedCategories, onUpdateCategories]);
+  }, [selectedCategories, onUpdateCategoriesMobile]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {

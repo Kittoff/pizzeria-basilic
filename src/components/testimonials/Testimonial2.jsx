@@ -74,6 +74,7 @@ export const Testimonial = () => {
               {index === imageIndex && (
                 <div className={`absolute ${urlChanged && "-z-50"}`}>
                   <motion.div
+                    className="bg-bg rounded-2xl"
                     custom={direction}
                     variants={variants}
                     initial="enter"

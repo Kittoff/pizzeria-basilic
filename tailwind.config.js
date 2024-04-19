@@ -16,6 +16,7 @@ module.exports = {
       colors: {
         primary: "var(--color-primary)",
         bg: "var(--color-bg)",
+        gray: "rgb(64, 64, 63)",
         customWhite: "#f4f4f4",
       },
       screens: {
