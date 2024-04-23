@@ -97,7 +97,7 @@ export const Testimonial = () => {
                       }
                     }}
                   >
-                    <p className=" px-6 py-2 text-2xl font-semibold text-center sm:font-bold sm:text-3xl md:text-4xl lg:max-w-2xl xl:max-w-4xl dark:text-gray-700">
+                    <p className=" px-6 py-2 text-2xl font-semibold text-center sm:font-bold sm:text-3xl md:text-4xl lg:max-w-2xl 2xl:max-w-4xl dark:text-gray-700">
                       <FaQuoteLeft className="text-primary" />
                       {single.testimonial}
                     </p>

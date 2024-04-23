@@ -12,6 +12,8 @@ import {
   useLenis,
 } from "@studio-freight/react-lenis";
 import SmoothScroll from "../components/SmoothScroll.jsx";
+import Preloader from "../components/preloader/Preloader.jsx";
+import { useEffect, useState } from "react";
 export default function App({ Component, pageProps, router }) {
   // Using the useLenis hook to get a LenisInstance
   const lenisInstance = useLenis();
@@ -32,65 +34,75 @@ export default function App({ Component, pageProps, router }) {
       lenisInstance.scrollTo(targetElement, scrollToOptions);
     }
   };
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
   return (
-    <div className="main">
-      <div className="w-[335px] 2xl:max-w-[1500px]  m-auto xl:w-[1260px] lg:w-[1004px] md:w-[748px] sm:w-[635px]">
-        {/* MENU BURGER */}
-        <div className="2xl:hidden">
-          <BurgerHeader />
-        </div>
+    <>
+      <AnimatePresence>{isLoading && <Preloader />}</AnimatePresence>
+      <div className="main">
+        <div className="w-[335px] 2xl:max-w-[1500px]  m-auto xl:w-[1260px] lg:w-[1004px] md:w-[748px] sm:w-[635px]">
+          {/* MENU BURGER */}
+          <div className="2xl:hidden">
+            <BurgerHeader />
+          </div>
 
-        {/* MENU DESKTOP */}
-        <div className="xs:hidden lg:block 2xl:block">
-          <nav className="flex items-center justify-between">
-            <div className="logo">
-              <Image
-                src="/logo.png"
-                alt="pizza basilic logo"
-                width={146}
-                height={146}
-              />
-              {/* 186 desktop */}
-            </div>
+          {/* MENU DESKTOP */}
+          <div className="xs:hidden lg:block 2xl:block">
+            <nav className="flex items-center justify-between">
+              <div className="logo">
+                <Image
+                  src="/logo.png"
+                  alt="pizza basilic logo"
+                  width={146}
+                  height={146}
+                />
+                {/* 186 desktop */}
+              </div>
 
-            {/* DESKTOP */}
-            <div
-              className={`${poppins.className} flex content-between min-w-[47.063rem] text-[18px] justify-evenly font-bold`}
-            >
-              <Link href="/">Accueil</Link>
-              <Link href="/#pizza" onClick={() => handleClick("#pizza")}>
-                Nos Pizzas
-              </Link>
-              <Link href="/contact">Nous trouver</Link>
-              <Link href="news">Actualités</Link>
-            </div>
-            <div className=" w-[250px] h-[70px] text-[0.625rem] flex items-center justify-center bg-primary content-center rounded-[30px]">
-              <Image
-                className="mr-2"
-                src="/phone.png"
-                alt="phone icon"
-                width={27}
-                height={29}
-              />
-
-              <a
-                className="text-bg text-[25px] font-medium"
-                href="tel:0557545717"
+              {/* DESKTOP */}
+              <div
+                className={`${poppins.className} flex content-between min-w-[47.063rem] text-[18px] justify-evenly font-bold`}
               >
-                05 57 54 57 17
-              </a>
-            </div>
-            {/* <div className={styles.nav_burger}>
+                <Link href="/">Accueil</Link>
+                <Link href="/#pizza" onClick={() => handleClick("#pizza")}>
+                  Nos Pizzas
+                </Link>
+                <Link href="/contact">Nous trouver</Link>
+                <Link href="news">Actualités</Link>
+              </div>
+              <div className=" w-[250px] h-[70px] text-[0.625rem] flex items-center justify-center bg-primary content-center rounded-[30px]">
+                <Image
+                  className="mr-2"
+                  src="/phone.png"
+                  alt="phone icon"
+                  width={27}
+                  height={29}
+                />
+
+                <a
+                  className="text-bg text-[25px] font-medium"
+                  href="tel:0557545717"
+                >
+                  05 57 54 57 17
+                </a>
+              </div>
+              {/* <div className={styles.nav_burger}>
         <Burger />
       </div> */}
-          </nav>
+            </nav>
+          </div>
+          <SmoothScroll>
+            <AnimatePresence mode="wait">
+              <Component key={router.route} {...pageProps} />
+            </AnimatePresence>
+          </SmoothScroll>
         </div>
-        <SmoothScroll>
-          <AnimatePresence mode="wait">
-            <Component key={router.route} {...pageProps} />
-          </AnimatePresence>
-        </SmoothScroll>
       </div>
-    </div>
+    </>
   );
 }

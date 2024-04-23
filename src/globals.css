@@ -30,3 +30,15 @@ html {
   /* max-width: 98.25rem;    DESKTOP */
   margin-inline: auto;
 }
+.circle {
+  position: relative;
+  aspect-ratio: 1;
+}
+
+.letter {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  font-weight: bolder;
+  color: var(--color-primary);
+}
