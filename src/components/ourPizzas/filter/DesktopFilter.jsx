@@ -43,7 +43,7 @@ const DesktopFilter = ({ onUpdateCategories }) => {
     }
   }, [selectedCategories, onUpdateCategories]);
   return (
-    <div className="flex h-[14px] flex-wrap w-[940px] justify-center gap-4 m-auto">
+    <div className="flex flex-wrap w-[940px] justify-center gap-4 m-auto">
       <div
         onClick={() => handleAllToggle()}
         className={`cursor-pointer select-none flex items-center rounded-[30px] h-[50px] pl-[43px] pr-[43px] text-bg bg-${
@@ -55,7 +55,7 @@ const DesktopFilter = ({ onUpdateCategories }) => {
         Toutes nos pizzas
       </div>
       {categories.map((category, index) => (
-        <div key={index}>
+        <div className="" key={index}>
           <div
             onClick={() => handleCategoryToggle(category)}
             className={`cursor-pointer select-none flex items-center rounded-[30px] h-[50px] pl-[43px] pr-[43px] text-bg bg-${

@@ -1,5 +1,4 @@
-"use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image.js";
 import Title from "@/src/utils/sectionTitle/Title.jsx";
 import Filter from "./filter/Filter.jsx";
@@ -7,10 +6,46 @@ import PizzaCard from "./pizzaCard/PizzaCard.jsx";
 import DesktopFilter from "./filter/DesktopFilter.jsx";
 import { useMediaQuery } from "@/src/utils/sectionTitle/hooks.jsx";
 import { pizzas } from "./data.js";
+import { motion } from "framer-motion";
+import { useRouter } from "next/router.js";
+
+const variants = {
+  initial: {
+    // backgroundColor: "red",
+  },
+  enter: {
+    // backgroundColor: "blue",
+  },
+  // exit: { backgroundColor: "green" },
+};
 
 const OurPizzas = () => {
+  const router = useRouter();
   const [selectedCategories, setSelectedCategories] = useState([]);
+  const [scrollToPizza, setScrollToPizza] = useState(false); // Ajout d'un état pour le défilement
   const is2XL = useMediaQuery("(min-width: 1440px)"); // Taille pour 2XL
+
+  useEffect(() => {
+    // Utilisation de setTimeout pour déclencher le défilement vers #pizza après 3 secondes
+    if (router.asPath === "/#pizza") {
+      const timer = setTimeout(() => {
+        setScrollToPizza(true);
+      }, 500);
+
+      return () => clearTimeout(timer); // Nettoyage du timer lors du démontage du composant
+    }
+  }, [router.asPath]);
+
+  useEffect(() => {
+    // Défilement vers #pizza
+    if (scrollToPizza) {
+      const element = document.getElementById("pizza");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" }); // Ajout de l'option block pour garantir un défilement vers le haut de l'élément
+        setScrollToPizza(false); // Réinitialisation de l'état après le défilement
+      }
+    }
+  }, [scrollToPizza]);
 
   const handleCategoriesUpdate = (categories) => {
     console.log("cat mobile: ", categories);
@@ -22,7 +57,14 @@ const OurPizzas = () => {
   );
 
   return (
-    <div className="mt-[50px]">
+    <motion.div
+      variants={variants}
+      initial="initial"
+      animate="enter"
+      exit="exit"
+      id="pizza"
+      className="pt-[20px] mt-[50px]"
+    >
       <Title title="Nos Pizzas" />
       {is2XL ? (
         <div className="2xl:block xs:hidden">
@@ -56,7 +98,7 @@ const OurPizzas = () => {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

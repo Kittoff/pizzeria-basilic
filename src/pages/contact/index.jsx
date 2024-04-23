@@ -11,12 +11,14 @@ const Contact = () => {
     <main className={styles.contact}>
       <Curve>
         <Title title="Nous trouver" />
-        <div className={styles.maps_contacts}>
-          <Hours />
-          <Contacts />
-        </div>
-        <div className="w-[334px] h-full sm:w-full ">
-          <Maps />
+        <div className="2xl:flex ">
+          <div className={styles.maps_contacts}>
+            <Hours />
+            <Contacts />
+          </div>
+          <div className="w-[334px] h-full sm:w-full ">
+            <Maps />
+          </div>
         </div>
       </Curve>
     </main>

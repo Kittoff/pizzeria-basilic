@@ -7,6 +7,7 @@ import styles from "./style.module.scss";
 import { inter } from "@/src/utils/font.jsx";
 
 const routes = {
+  "/#pizza": "Nos Pizzas",
   "/": "Accueil",
   "/news": "Actualités",
   "/contact": "Contact",
@@ -27,7 +28,10 @@ export default function Curve({ children, backgroundColor }) {
     width: null,
     height: null,
   });
-
+  const getCurrentRouteText = () => {
+    const currentRoute = router.asPath.split("#")[1] || router.route;
+    return routes[currentRoute] || "Nos Pizzas";
+  };
   useEffect(() => {
     function resize() {
       setDimensions({
@@ -58,7 +62,7 @@ export default function Curve({ children, backgroundColor }) {
         className={`${styles.route} ${inter.className}`}
         {...anim(text)}
       >
-        {routes[router.route]}
+        {getCurrentRouteText()}
       </motion.p>
       {dimensions.width != null && <SVG {...dimensions} />}
       <motion.div {...anim(childrenIn)}>{children}</motion.div>

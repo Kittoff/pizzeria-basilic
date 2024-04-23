@@ -1,6 +1,7 @@
 import { Poppins } from "next/font/google";
 import "../global.css";
 import Header from "./components/header/index.jsx";
+import SmoothScroll from "../components/SmoothScroll.jsx";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400"] });
 
@@ -15,7 +16,7 @@ export default function RootLayout({ children }) {
       <body className={poppins.className}>
         <div className="wrapper">
           <Header />
-          {children}
+          <SmoothScroll>{children}</SmoothScroll>
         </div>
       </body>
     </html>

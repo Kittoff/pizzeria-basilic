@@ -6,7 +6,32 @@ import BurgerHeader from "../components/header/index.jsx";
 import "@/src/styles/styles.scss";
 import Image from "next/image.js";
 import { poppins } from "../utils/font.jsx";
+import {
+  LenisInstance,
+  ScrollToParams,
+  useLenis,
+} from "@studio-freight/react-lenis";
+import SmoothScroll from "../components/SmoothScroll.jsx";
 export default function App({ Component, pageProps, router }) {
+  // Using the useLenis hook to get a LenisInstance
+  const lenisInstance = useLenis();
+  // Function for smooth scrolling
+  const handleClick = (targetElement) => {
+    if (targetElement) {
+      const scrollToOptions = {
+        // Customize scroll options if needed
+        offset: 0,
+        lerp: 0.1,
+        duration: 1.5,
+        easing: (rawValue) => rawValue, // Example easing function
+        immediate: false,
+        lock: false,
+        force: false,
+      };
+
+      lenisInstance.scrollTo(targetElement, scrollToOptions);
+    }
+  };
   return (
     <div className="main">
       <div className="w-[335px] 2xl:max-w-[1500px]  m-auto xl:w-[1260px] lg:w-[1004px] md:w-[748px] sm:w-[635px]">
@@ -33,7 +58,9 @@ export default function App({ Component, pageProps, router }) {
               className={`${poppins.className} flex content-between min-w-[47.063rem] text-[18px] justify-evenly font-bold`}
             >
               <Link href="/">Accueil</Link>
-              <Link href="#nos-pizzas">Nos Pizzas</Link>
+              <Link href="/#pizza" onClick={() => handleClick("#pizza")}>
+                Nos Pizzas
+              </Link>
               <Link href="/contact">Nous trouver</Link>
               <Link href="news">Actualités</Link>
             </div>
@@ -58,10 +85,11 @@ export default function App({ Component, pageProps, router }) {
       </div> */}
           </nav>
         </div>
-
-        <AnimatePresence mode="wait">
-          <Component key={router.route} {...pageProps} />
-        </AnimatePresence>
+        <SmoothScroll>
+          <AnimatePresence mode="wait">
+            <Component key={router.route} {...pageProps} />
+          </AnimatePresence>
+        </SmoothScroll>
       </div>
     </div>
   );

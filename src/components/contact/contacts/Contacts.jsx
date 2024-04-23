@@ -12,26 +12,28 @@ const Contacts = () => {
       iconSrc: "/phone.png",
       altText: "phone icon",
       text: "05 57 54 57 17",
-      textSize: "text-12 sm:text-xl",
+      textSize: "text-12 sm:text-3xl",
     },
     {
       iconSrc: "/mail.png",
       altText: "arobase icon",
       text: "basilic.pizza@gmail.com",
-      textSize: "text-[0.7rem] sm:text-xl",
+      textSize: "text-[0.7rem] sm:text-3xl",
       link: "mailto:basilic.pizza@gmail.com",
     },
     {
       iconSrc: "/pin.png",
       altText: "pin location icon",
       text: "29 AVENUE DU GENERAL DE GAULLE 33550 LANGOIRAN",
-      textSize: "text-[0.6rem] sm:text-[15px]",
+      textSize: "text-[0.6rem] sm:text-[15px] 2xl:text-[22px]",
     },
   ];
 
   return (
-    <div className="bg-primary w-[10.438rem] h-[10.438rem] flex flex-col items-center text-bg sm:w-1/2">
-      <h2 className={`${inter.className} text-[1.875rem] font-bold`}>
+    <div className="bg-primary w-[10.438rem] h-[10.438rem] flex flex-col items-center text-bg sm:w-1/2 2xl:h-[308px] 2xl:w-[420px]">
+      <h2
+        className={`${inter.className} text-[1.875rem] font-bold 2xl:text-[3.75rem]`}
+      >
         Contacts
       </h2>
       <div className="flex flex-col justify-between pb-2 h-full pl-2 items-start">
