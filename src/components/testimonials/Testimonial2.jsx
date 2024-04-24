@@ -53,7 +53,7 @@ export const Testimonial = () => {
 
   return (
     <>
-      <section className="my-8 ">
+      <section className="my-8 min-h-96">
         <div className="container flex flex-col items-center p-4 mx-auto space-y-6 ">
           <div className="-my-8 w-full justify-evenly bg-primary pb-9  flex gap-4 p-1 h-11 rounded-2xl">
             <div
@@ -97,7 +97,7 @@ export const Testimonial = () => {
                       }
                     }}
                   >
-                    <p className=" px-6 py-2 text-2xl font-semibold text-center sm:font-bold sm:text-3xl md:text-4xl lg:max-w-2xl 2xl:max-w-4xl dark:text-gray-700">
+                    <p className=" px-6 py-2 text-2xl font-semibold sm:font-bold sm:text-3xl md:text-4xl lg:max-w-2xl 2xl:max-w-4xl dark:text-gray-700 text-left">
                       <FaQuoteLeft className="text-primary" />
                       {single.testimonial}
                     </p>

@@ -48,7 +48,6 @@ const OurPizzas = () => {
   }, [scrollToPizza]);
 
   const handleCategoriesUpdate = (categories) => {
-    console.log("cat mobile: ", categories);
     setSelectedCategories(categories);
   };
 
@@ -79,9 +78,9 @@ const OurPizzas = () => {
         <div className="flex flex-col items-center sm:items-stretch">
           {filteredPizzas.map((category) => (
             <div key={category.category}>
-              <h1 className="mt-[3.125em] mb-[0.938em] text-[1.375rem]">
+              <h2 className="mt-[3.125em] mb-[0.938em] text-[1.375rem] 2xl:text-[2.375rem]">
                 {category.category}
-              </h1>
+              </h2>
               <div className="grid grid-cols-[1fr,1fr] gap-[20px] content-between  2xl:grid-cols-[1fr,1fr,1fr,1fr] 2xl:justify-center">
                 {category.pizzas.map((pizza) => (
                   <PizzaCard

@@ -21,7 +21,14 @@ export const testimonials = [
     img: Aayush,
     name: "Aayush Shrestha",
     profession: "Musician",
-    testimonial:
-      "As a musician, Kalachhetra has been a game-changer for me. It has allowed me to showcase my music, collaborate with other artists, and connect with music lovers who appreciate my work. The platform's user-friendly interface and the supportive community make it an ideal place for artists like me to thriveAs a musician, Kalachhetra has been a game-changer for me. It has allowed me to showcase my music, collaborate with other artists, and connect with music lovers who appreciate my work. The platform's user-friendly interface and the supportive community make it an ideal place for artists like me to thriveAs a musician, Kalachhetra has been a game-changer for me. It has allowed me to showcase my music, collaborate with other artists, and connect with music lovers who appreciate my work. The platform's user-friendly interface and the supportive community make it an ideal place for artists like me to thriveAs a musician, Kalachhetra has been a game-changer for me. It has allowed me to showcase my music, collaborate with other artists, and connect with music lovers who appreciate my work. The platform's user-friendly interface and the supportive community make it an ideal place for artists like me to thrive.",
+    testimonial: `Cadre sympa et propre
+    Pizzas délicieuses
+    Bon accueil du nouveau propriétaire ( je ne connaissais pas l ancienne )
+    Je recommande
+    Sur place ou a emporterCadre sympa et propre
+    Pizzas délicieuses
+    Bon accueil du nouveau propriétaire ( je ne connaissais pas l ancienne )
+    Je recommande
+    Sur place ou a emporter `,
   },
 ];

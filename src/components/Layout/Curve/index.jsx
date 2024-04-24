@@ -24,18 +24,14 @@ const anim = (variants) => {
 
 export default function Curve({ children, backgroundColor }) {
   const router = useRouter();
+  const [isClient, setIsClient] = useState(false);
   const [dimensions, setDimensions] = useState({
     width: null,
     height: null,
   });
-  const getCurrentRouteText = () => {
-    if (typeof window !== "undefined") {
-      const currentRoute = router.asPath.split("#")[1] || router.route;
-      return routes[currentRoute] || "Nos Pizzas";
-    }
-    return "Nos Pizzas";
-  };
+
   useEffect(() => {
+    setIsClient(true);
     function resize() {
       setDimensions({
         width: window.innerWidth,
@@ -50,25 +46,30 @@ export default function Curve({ children, backgroundColor }) {
   }, []);
 
   return (
-    <div
-      className={`${styles.page} ${styles.curve}`}
-      style={{ backgroundColor }}
-    >
-      <div
-        style={{
-          opacity: dimensions.width == null ? 1 : 0,
-          height: "100vh - 300",
-        }}
-        className={styles.background}
-      />
-      <motion.p
-        className={`${styles.route} ${inter.className}`}
-        {...anim(text)}
-      >
-        {getCurrentRouteText()}
-      </motion.p>
-      {dimensions.width != null && <SVG {...dimensions} />}
-      <motion.div {...anim(childrenIn)}>{children}</motion.div>
+    <div>
+      {isClient && (
+        <div
+          className={`${styles.page} ${styles.curve}`}
+          style={{ backgroundColor }}
+        >
+          <div
+            style={{
+              opacity: dimensions.width == null ? 1 : 0,
+              height: "100vh - 300",
+            }}
+            className={styles.background}
+          />
+          <motion.p
+            className={`${styles.route} ${inter.className}`}
+            {...anim(text)}
+          >
+            {/* {routes[router.route]} */}
+            {routes[router.asPath]}
+          </motion.p>
+          {dimensions.width != null && <SVG {...dimensions} />}
+          <motion.div {...anim(childrenIn)}>{children}</motion.div>
+        </div>
+      )}
     </div>
   );
 }
