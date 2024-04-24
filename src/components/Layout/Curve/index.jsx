@@ -29,8 +29,11 @@ export default function Curve({ children, backgroundColor }) {
     height: null,
   });
   const getCurrentRouteText = () => {
-    const currentRoute = router.asPath.split("#")[1] || router.route;
-    return routes[currentRoute] || "Nos Pizzas";
+    if (typeof window !== "undefined") {
+      const currentRoute = router.asPath.split("#")[1] || router.route;
+      return routes[currentRoute] || "Nos Pizzas";
+    }
+    return "Nos Pizzas";
   };
   useEffect(() => {
     function resize() {
