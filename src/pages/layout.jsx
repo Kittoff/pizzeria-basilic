@@ -1,5 +1,5 @@
 import { Poppins } from "next/font/google";
-import "../global.css";
+// import "../global.css";
 import Header from "./components/header/index.jsx";
 import SmoothScroll from "../components/SmoothScroll.jsx";
 
