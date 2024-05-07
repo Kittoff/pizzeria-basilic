@@ -26,10 +26,10 @@ const News = () => {
         </h2>
         {/* <Testimonial /> */}
         <ResponsiveMasonry
-          columnsCountBreakPoints={{ 300: 1, 500: 3, 700: 3, 900: 5 }}
+          columnsCountBreakPoints={{ 300: 1, 500: 2, 700: 3, 900: 4 }}
         >
           <Masonry
-            className="lg:!w-[900px] xs:!w-[500px] md:!w-[700px] sm:!w-[500px] xl:!w-[1000px] 2xl:!w-[1000px]"
+            className="lg:!w-[900px] xs:!w-[300px] md:!w-[700px] sm:!w-[600px] xl:!w-[1000px] 2xl:!w-[1000px]"
             columnsCount={1}
             gutter="15px"
           >

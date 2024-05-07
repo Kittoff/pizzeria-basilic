@@ -10,16 +10,16 @@ const Hero = () => {
       className={`${urbanist.className} min-h-[75vh] flex flex-col items-center  `}
     >
       <div
-        className={`pt-[154px] 2xl:pt-[70px] flex flex-col items-center lg:flex-row `}
+        className={`pt-[154px] lg:pt-[70px] flex flex-col items-center lg:flex-row `}
       >
-        <div className="lg:w-60% flex flex-col items-center lg:items-start lg:justify-center 2xl:flex-row">
-          <div className=" 2xl:-mr-[300px] 2xl-mt-[20px]">
-            <h1 className="2xl:w-full text-[38px] font-bold lg:bg-blue-400 xl:bg-slate-500 xl:w-[63%] 2xl:text-[66px] 2xl:bg-lime-300 md:bg-red-500 sm:text-[50px]">
+        <div className="lg:w-60% flex flex-col items-center lg:items-start lg:justify-center lg:flex-row">
+          <div className=" lg:-mr-[300px] xl:-mr-[400px] 2xl-mt-[20px]">
+            <h1 className="lg:w-full text-[38px] font-bold  xl:w-[80%] lg:text-[66px]  sm:text-[50px]">
               A chaque bouchée, un peu d’
               <span className="text-primary">Italie!</span>
             </h1>
             <p
-              className={`${poppins.className} mt-11 text-[0.75rem] 2xl:w-[70%] 2xl:text-[21px] sm:text-[15px] lg:text-left `}
+              className={`${poppins.className} mt-11 text-[0.75rem] lg:w-[70%] xl:w-[70%] lg:text-[21px] sm:text-[15px] lg:text-left `}
             >
               Nos pizzas vous invitent à une expérience chaleureuse et
               délicieuse. Elles vous enveloppent de saveurs authentiques, vous
@@ -28,7 +28,7 @@ const Hero = () => {
           </div>
 
           <div className="lg:w-40%">
-            <div className="w-[335px] h-[160px]  2xl:w-[748px]  2xl:-right-[66px] 2xl:top-[174px]">
+            <div className="w-[335px] h-[160px]  lg:w-[448px] lg:mt-[70px] lg:-right-[66px] lg:top-[174px] xl:w-[600px]">
               <Image
                 className="mt-[50px]"
                 alt="hero section pizza image"
@@ -40,7 +40,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="2xl:mt-[50px]">
+      <div className="lg:mt-[50px]">
         <Image
           alt=" icon scroll"
           className="mt-[21px]"
