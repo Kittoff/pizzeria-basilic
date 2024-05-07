@@ -47,7 +47,7 @@ export default function App({ Component, pageProps, router }) {
       <div className="main">
         <div className="w-[335px] 2xl:max-w-[1500px]  m-auto xl:w-[1260px] lg:w-[1004px] md:w-[748px] sm:w-[635px]">
           {/* MENU BURGER */}
-          <div className="2xl:hidden">
+          <div className="lg:hidden">
             <BurgerHeader />
           </div>
 
@@ -85,7 +85,7 @@ export default function App({ Component, pageProps, router }) {
                 />
 
                 <a
-                  className="text-bg text-[25px] font-medium"
+                  className="text-bg text-[25px] font-medium xl:text-[25px] lg:text-[16px]"
                   href="tel:0557545717"
                 >
                   05 57 54 57 17

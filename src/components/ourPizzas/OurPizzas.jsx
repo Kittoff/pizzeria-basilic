@@ -23,7 +23,7 @@ const OurPizzas = () => {
   const router = useRouter();
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [scrollToPizza, setScrollToPizza] = useState(false); // Ajout d'un état pour le défilement
-  const is2XL = useMediaQuery("(min-width: 1440px)"); // Taille pour 2XL
+  const is2XL = useMediaQuery("(min-width: 1024px)"); // Taille pour 2XL
 
   useEffect(() => {
     // Utilisation de setTimeout pour déclencher le défilement vers #pizza après 3 secondes
@@ -66,7 +66,7 @@ const OurPizzas = () => {
     >
       <Title title="Nos Pizzas" />
       {is2XL ? (
-        <div className="2xl:block xs:hidden">
+        <div className="2xl:block ">
           <DesktopFilter onUpdateCategories={handleCategoriesUpdate} />
         </div>
       ) : (
@@ -81,7 +81,7 @@ const OurPizzas = () => {
               <h2 className="mt-[3.125em] mb-[0.938em] text-[1.375rem] 2xl:text-[2.375rem]">
                 {category.category}
               </h2>
-              <div className="grid grid-cols-[1fr,1fr] gap-[20px] content-between  2xl:grid-cols-[1fr,1fr,1fr,1fr] 2xl:justify-center">
+              <div className="grid xs:grid-cols-[1fr,1fr] gap-5 sm:grid-cols-test 2xl:gap-20 justify-items-center">
                 {category.pizzas.map((pizza) => (
                   <PizzaCard
                     key={pizza.id}

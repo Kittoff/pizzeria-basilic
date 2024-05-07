@@ -9,20 +9,20 @@ const Contacts = () => {
   // Données des contacts
   const contactsData = [
     {
-      iconSrc: "/phone.png",
+      iconSrc: "/phone2.png",
       altText: "phone icon",
       text: "05 57 54 57 17",
       textSize: "text-12 sm:text-3xl",
     },
     {
-      iconSrc: "/mail.png",
+      iconSrc: "/mail2.png",
       altText: "arobase icon",
       text: "basilic.pizza@gmail.com",
       textSize: "text-[0.7rem] sm:text-3xl",
       link: "mailto:basilic.pizza@gmail.com",
     },
     {
-      iconSrc: "/pin.png",
+      iconSrc: "/pin2.png",
       altText: "pin location icon",
       text: "29 AVENUE DU GENERAL DE GAULLE 33550 LANGOIRAN",
       textSize: "text-[0.6rem] sm:text-[15px] 2xl:text-[22px]",
@@ -39,13 +39,17 @@ const Contacts = () => {
       <div className="flex flex-col justify-between pb-2 h-full pl-2 items-start">
         {contactsData.map((contact, index) => (
           <div key={index} className="flex items-center mb-2">
-            <div className="relative h-[15px] w-[15px] sm:h-[30px] sm:w-[30px] flex-shrink-0">
+            <div>
               <Image
-                className={`mr-1 ${urlChanged && "-z-50"}`}
+                className={`mr-1  2xl:h-[40px] 2xl:w-[40px] ${
+                  urlChanged && "-z-50"
+                }`}
                 alt={contact.altText}
                 src={contact.iconSrc}
-                layout="fill"
-                objectFit="cover"
+                // layout="fill"
+                width={20}
+                height={20}
+                // objectFit="cover"
               />
             </div>
             {contact.link ? (

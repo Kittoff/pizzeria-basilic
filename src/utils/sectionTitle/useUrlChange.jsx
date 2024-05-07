@@ -11,9 +11,12 @@ export const useUrlChange = () => {
 
   useEffect(() => {
     const handleRouteChange = (url) => {
-      setUrlChanged(true);
-      // Log or execute any other code when the URL changes
-      console.log("URL has changed:", url);
+      // Check if the new URL is different from the current one
+      if (router.asPath !== url) {
+        setUrlChanged(true);
+        // Log or execute any other code when the URL changes
+        console.log("URL has changed:", url);
+      }
     };
 
     // Listen to route changes
@@ -23,7 +26,7 @@ export const useUrlChange = () => {
     return () => {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
-  }, []);
+  }, [router.asPath, router.events]); // Re-run effect when asPath changes
 
   return urlChanged;
 };

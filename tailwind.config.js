@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
+  // important: true,
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,7 +9,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        test: "repeat( auto-fit, minmax(200px, 1fr) )",
+      },
       backgroundImage: {
+        "iframe-loader": "url(/loader.png)",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",

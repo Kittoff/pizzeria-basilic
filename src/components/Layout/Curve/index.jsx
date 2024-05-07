@@ -24,14 +24,36 @@ const anim = (variants) => {
 
 export default function Curve({ children, backgroundColor }) {
   const router = useRouter();
-  const [isClient, setIsClient] = useState(false);
   const [dimensions, setDimensions] = useState({
     width: null,
     height: null,
   });
+  const currentPath = router.asPath.split("#")[0]; // Récupérer le chemin actuel sans l'ancre
 
+  let activeRoute;
+
+  // Récupérer le chemin actuel sans l'ancre
+
+  // Vérifier si le chemin actuel correspond à une route spécifique
+  switch (currentPath) {
+    case "/":
+      activeRoute = "Accueil";
+      break;
+    case "/news":
+      activeRoute = "Actualités";
+      break;
+    case "/contact":
+      activeRoute = "Contact";
+      break;
+    default:
+      activeRoute = "Accueil"; // Par défaut, si aucune correspondance n'est trouvée
+  }
+
+  // Si le chemin actuel est "/#pizza", utiliser "Nos Pizzas" comme texte de route
+  if (currentPath === "/" && router.asPath.includes("#pizza")) {
+    activeRoute = "Nos Pizzas";
+  }
   useEffect(() => {
-    setIsClient(true);
     function resize() {
       setDimensions({
         width: window.innerWidth,
@@ -46,30 +68,27 @@ export default function Curve({ children, backgroundColor }) {
   }, []);
 
   return (
-    <div>
-      {isClient && (
-        <div
-          className={`${styles.page} ${styles.curve}`}
-          style={{ backgroundColor }}
-        >
-          <div
-            style={{
-              opacity: dimensions.width == null ? 1 : 0,
-              height: "100vh - 300",
-            }}
-            className={styles.background}
-          />
-          <motion.p
-            className={`${styles.route} ${inter.className}`}
-            {...anim(text)}
-          >
-            {/* {routes[router.route]} */}
-            {routes[router.asPath]}
-          </motion.p>
-          {dimensions.width != null && <SVG {...dimensions} />}
-          <motion.div {...anim(childrenIn)}>{children}</motion.div>
-        </div>
-      )}
+    <div
+      className={`${styles.page} ${styles.curve}`}
+      style={{ backgroundColor }}
+    >
+      <div
+        style={{
+          opacity: dimensions.width == null ? 1 : 0,
+          height: "100vh - 300",
+        }}
+        className={styles.background}
+      />
+      <motion.p
+        className={`${styles.route} ${inter.className}`}
+        {...anim(text)}
+      >
+        {/* {routes[router.route]} */}
+        {/* {routes[router.asPath]} */}
+        {activeRoute}
+      </motion.p>
+      {dimensions.width != null && <SVG {...dimensions} />}
+      <motion.div {...anim(childrenIn)}>{children}</motion.div>
     </div>
   );
 }

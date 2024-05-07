@@ -53,7 +53,7 @@ export const Testimonial = () => {
 
   return (
     <>
-      <section className="my-8 min-h-96">
+      <section className="my-8 bg-green-600 h-[100vh]">
         <div className="container flex flex-col items-center p-4 mx-auto space-y-6 ">
           <div className="-my-8 w-full justify-evenly bg-primary pb-9  flex gap-4 p-1 h-11 rounded-2xl">
             <div
