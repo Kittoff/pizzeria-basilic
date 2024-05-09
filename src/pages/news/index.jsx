@@ -3,13 +3,10 @@ import Title from "@/src/utils/sectionTitle/Title.jsx";
 import React from "react";
 import styles from "./style.module.scss";
 import Curve from "@/src/components/Layout/Curve/index.jsx";
-import Testimonial from "@/src/components/testimonials/Testimonial.jsx";
-import Reviews from "@/src/components/testimonials/Reviews.jsx";
 import dynamic from "next/dynamic.js";
 import { testimonials } from "../../components/testimonials/data.js";
-import { motion } from "framer-motion";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-// import { Testimonial } from "@/src/components/testimonials/Testimonial2.jsx";
+
 const ReviewsNoSSR = dynamic(
   () => import("@/src/components/testimonials/Reviews.jsx"),
   {
@@ -24,7 +21,6 @@ const News = () => {
         <h2 className="text-[1.563rem] font-bold text-center 2xl:text-[2rem] text-primary">
           Ce qu'ils pensent de nous
         </h2>
-        {/* <Testimonial /> */}
         <ResponsiveMasonry
           columnsCountBreakPoints={{ 300: 1, 500: 2, 700: 3, 900: 4 }}
         >
