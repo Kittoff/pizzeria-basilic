@@ -32,7 +32,7 @@ const Hero = () => {
               <Image
                 className="mt-[50px]"
                 alt="hero section pizza image"
-                src="/pizza.png"
+                src="/pizza2.png"
                 width={848}
                 height={31}
               />

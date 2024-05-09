@@ -64,7 +64,7 @@ const PizzaCard = ({ name, ingredients, small_price, big_price, price }) => {
       >
         <div className="absolute -top-[30px]">
           <Image
-            src="/pizza.png"
+            src="/pizza2.png"
             width={370}
             height={180}
             alt="pizza card image"
