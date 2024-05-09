@@ -30,7 +30,7 @@ export default function Index() {
         {/* 186 desktop */}
       </div>
       <div className={styles.nav_phone}>
-        <Image src="/phone.png" alt="phone icon" width={20} height={20} />
+        <Image src="/phone2.png" alt="phone icon" width={20} height={20} />
 
         <a href="tel:0557545717">Appelez-nous</a>
       </div>
