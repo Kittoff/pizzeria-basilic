@@ -25,7 +25,7 @@ module.exports = {
         customWhite: "#f4f4f4",
       },
       screens: {
-        xs: "364px",
+        xs: "350px",
         xxs: "300px",
         ...defaultTheme.screens,
       },
