@@ -6,11 +6,7 @@ import BurgerHeader from "../components/header/index.jsx";
 import "@/src/styles/styles.scss";
 import Image from "next/image.js";
 import { poppins } from "../utils/font.jsx";
-import {
-  LenisInstance,
-  ScrollToParams,
-  useLenis,
-} from "@studio-freight/react-lenis";
+import { useLenis } from "@studio-freight/react-lenis";
 import SmoothScroll from "../components/SmoothScroll.jsx";
 import Preloader from "../components/preloader/Preloader.jsx";
 import { useEffect, useState } from "react";
@@ -61,7 +57,6 @@ export default function App({ Component, pageProps, router }) {
                   width={146}
                   height={146}
                 />
-                {/* 186 desktop */}
               </div>
 
               {/* DESKTOP */}
@@ -78,7 +73,7 @@ export default function App({ Component, pageProps, router }) {
               <div className=" w-[250px] h-[70px] text-[0.625rem] flex items-center justify-center bg-primary content-center rounded-[30px]">
                 <Image
                   className="mr-2"
-                  src="/phone.png"
+                  src="/phone2.png"
                   alt="phone icon"
                   width={27}
                   height={29}
@@ -91,9 +86,6 @@ export default function App({ Component, pageProps, router }) {
                   05 57 54 57 17
                 </a>
               </div>
-              {/* <div className={styles.nav_burger}>
-        <Burger />
-      </div> */}
             </nav>
           </div>
           <SmoothScroll>
