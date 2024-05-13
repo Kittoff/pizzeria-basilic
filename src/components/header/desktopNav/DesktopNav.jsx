@@ -1,4 +1,3 @@
-import { poppins } from "@/src/utils/font.jsx";
 import { useLenis } from "@studio-freight/react-lenis";
 import Image from "next/image.js";
 import Link from "next/link.js";
@@ -38,7 +37,7 @@ const DesktopNav = () => {
 
         {/* DESKTOP */}
         <div
-          className={`${poppins.className} flex content-between min-w-[47.063rem] text-[18px] justify-evenly font-bold`}
+          className={` flex content-between min-w-[47.063rem] text-[18px] justify-evenly font-bold`}
         >
           <Link href="/">Accueil</Link>
           <Link href="/#pizza" onClick={() => handleClick("#pizza")}>

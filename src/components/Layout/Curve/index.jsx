@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { text, curve, translate, childrenIn } from "./anim";
 import styles from "./style.module.scss";
-import { inter } from "@/src/utils/font.jsx";
 
 const routes = {
   "/#pizza": "Nos Pizzas",
@@ -79,10 +78,7 @@ export default function Curve({ children, backgroundColor }) {
         }}
         className={styles.background}
       />
-      <motion.p
-        className={`${styles.route} ${inter.className}`}
-        {...anim(text)}
-      >
+      <motion.p className={`${styles.route} `} {...anim(text)}>
         {/* {routes[router.route]} */}
         {/* {routes[router.asPath]} */}
         {activeRoute}

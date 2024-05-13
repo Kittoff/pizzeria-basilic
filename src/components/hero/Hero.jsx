@@ -1,4 +1,3 @@
-import { inter, poppins, urbanist } from "../../utils/font.jsx";
 import React from "react";
 import Image from "next/image.js";
 import { useUrlChange } from "@/src/utils/sectionTitle/useUrlChange.jsx";
@@ -6,9 +5,7 @@ import { useUrlChange } from "@/src/utils/sectionTitle/useUrlChange.jsx";
 const Hero = () => {
   const urlChanged = useUrlChange();
   return (
-    <main
-      className={`${urbanist.className} min-h-[75vh] flex flex-col items-center  `}
-    >
+    <main className={` min-h-[75vh] flex flex-col items-center  `}>
       <div
         className={`pt-[154px] lg:pt-[70px] flex flex-col items-center lg:flex-row `}
       >
@@ -19,7 +16,7 @@ const Hero = () => {
               <span className="text-primary">Italie!</span>
             </h1>
             <p
-              className={`${poppins.className} mt-11 text-[0.75rem] lg:w-[70%] xl:w-[70%] lg:text-[21px] sm:text-[15px] lg:text-left `}
+              className={` mt-11 text-[0.75rem] lg:w-[70%] xl:w-[70%] lg:text-[21px] sm:text-[15px] lg:text-left `}
             >
               Nos pizzas vous invitent à une expérience chaleureuse et
               délicieuse. Elles vous enveloppent de saveurs authentiques, vous

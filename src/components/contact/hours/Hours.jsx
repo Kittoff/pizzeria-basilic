@@ -1,11 +1,10 @@
 import React from "react";
-import { inter } from "@/src/utils/font.jsx";
 
 const Hours = () => {
   return (
     <div className="flex flex-col items-center h-[10.438rem] w-[10.438rem] bg-bg sm:w-1/2 2xl:h-[308px] 2xl:w-[420px]">
       <h2
-        className={`${inter.className} text-[1.875rem] text-primary font-bold 2xl:text-[3.75rem]`}
+        className={` text-[1.875rem] text-primary font-bold 2xl:text-[3.75rem]`}
       >
         Horaires
       </h2>

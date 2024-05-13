@@ -1,11 +1,8 @@
 import React from "react";
-import { inter } from "../font.jsx";
 
 const Title = ({ title, id }) => {
   return (
-    <div
-      className={`${inter.className} ${id} flex flex-col items-center mb-[50px]`}
-    >
+    <div className={`${id} flex flex-col items-center mb-[50px]`}>
       <svg
         className="w-[107px] h-[10px] 2xl:w-[204px]"
         xmlns="http://www.w3.org/2000/svg"

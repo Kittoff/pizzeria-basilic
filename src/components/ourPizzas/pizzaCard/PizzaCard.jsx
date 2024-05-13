@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image.js";
-import { inter } from "@/src/utils/font.jsx";
 import { motion } from "framer-motion";
 
 const PizzaCard = ({ name, ingredients, small_price, big_price, price }) => {
@@ -59,7 +58,7 @@ const PizzaCard = ({ name, ingredients, small_price, big_price, price }) => {
       transition={{ duration: 0.5 }}
     >
       <div
-        className={` ${inter.className} 2xl:w-[270px] 2xl:h-[540px] rounded-[15px] flex flex-col items-center justify-center relative mt-[60px] bg-bg bg-gradient-to-b from-bg to-gray w-[9.375rem] h-[309px] gap-5 pt-[50px]`}
+        className={`  2xl:w-[270px] 2xl:h-[540px] rounded-[15px] flex flex-col items-center justify-center relative mt-[60px] bg-bg bg-gradient-to-b from-bg to-gray w-[9.375rem] h-[309px] gap-5 pt-[50px]`}
       >
         <div className="absolute -top-[30px]">
           <Image
