@@ -9,9 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@studio-freight/lenis": "^1.0.42",
     "@studio-freight/react-lenis": "^0.0.47",
-    "@studio-freight/tempus": "^0.0.44",
     "flubber": "^0.4.2",
     "framer-motion": "^11.0.20",
     "gsap": "^3.12.5",
@@ -24,7 +22,8 @@
     "react-responsive-masonry": "^2.2.0",
     "react-router-hash-link": "^2.4.3",
     "sass": "^1.72.0",
-    "sharp": "^0.33.3"
+    "sharp": "^0.33.3",
+    "unimported": "^1.31.1"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",

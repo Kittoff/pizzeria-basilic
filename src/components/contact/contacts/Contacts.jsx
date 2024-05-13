@@ -46,10 +46,8 @@ const Contacts = () => {
                 }`}
                 alt={contact.altText}
                 src={contact.iconSrc}
-                // layout="fill"
                 width={20}
                 height={20}
-                // objectFit="cover"
               />
             </div>
             {contact.link ? (

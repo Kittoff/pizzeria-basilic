@@ -1,6 +1,4 @@
 import React from "react";
-import styles from "./style.module.scss";
-import Image from "next/image.js";
 import { inter } from "../font.jsx";
 
 const Title = ({ title, id }) => {
@@ -8,11 +6,8 @@ const Title = ({ title, id }) => {
     <div
       className={`${inter.className} ${id} flex flex-col items-center mb-[50px]`}
     >
-      {/* <Image alt="delimiter up" src="/delimiter.svg" width={107} height={0} /> */}
       <svg
         className="w-[107px] h-[10px] 2xl:w-[204px]"
-        // height="10"
-        // width="107"
         xmlns="http://www.w3.org/2000/svg"
       >
         <line
@@ -31,7 +26,6 @@ const Title = ({ title, id }) => {
       >
         <line className="stroke-primary stroke-[10]" x1="0" y1="0" x2="300" />
       </svg>
-      {/* <Image alt="delimiter down" src="/delimiter.svg" width={107} height={0} /> */}
     </div>
   );
 };

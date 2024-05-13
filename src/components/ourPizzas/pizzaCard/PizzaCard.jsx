@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./style.module.scss";
 import Image from "next/image.js";
 import { inter } from "@/src/utils/font.jsx";
 import { motion } from "framer-motion";

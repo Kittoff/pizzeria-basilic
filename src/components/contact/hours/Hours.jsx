@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./style.module.scss";
 import { inter } from "@/src/utils/font.jsx";
 
 const Hours = () => {
