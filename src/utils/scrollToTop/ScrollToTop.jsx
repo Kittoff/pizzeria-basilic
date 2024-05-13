@@ -19,7 +19,7 @@ const ScrollToTop = () => {
     });
   };
   return (
-    <div className=" top-28 right-0 fixed">
+    <div className=" top-1/2 right-0 fixed">
       {" "}
       {showTopBtn && (
         <FaArrowCircleUp
