@@ -29,7 +29,7 @@ const ScrollToTop = forwardRef((props, ref) => {
   };
 
   return (
-    <div ref={ref} className="top-[50dvh] right-0 sm:right-2 fixed">
+    <div ref={ref} className="top-[50vh] right-0 sm:right-2 fixed">
       {showTopBtn && (
         <Magnetic>
           <FaArrowCircleUp
