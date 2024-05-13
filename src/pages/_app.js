@@ -10,6 +10,7 @@ import { useLenis } from "@studio-freight/react-lenis";
 import SmoothScroll from "../components/SmoothScroll.jsx";
 import Preloader from "../components/preloader/Preloader.jsx";
 import { useEffect, useState } from "react";
+import Footer from "../components/footer/index.jsx";
 export default function App({ Component, pageProps, router }) {
   // Using the useLenis hook to get a LenisInstance
   const lenisInstance = useLenis();
@@ -46,7 +47,6 @@ export default function App({ Component, pageProps, router }) {
           <div className="lg:hidden">
             <BurgerHeader />
           </div>
-
           {/* MENU DESKTOP */}
           <div className="xxs:hidden xs:hidden lg:block 2xl:block">
             <nav className="flex items-center justify-between">
@@ -95,6 +95,7 @@ export default function App({ Component, pageProps, router }) {
           </SmoothScroll>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

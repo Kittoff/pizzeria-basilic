@@ -8,7 +8,7 @@ const Hours = () => {
       <h2
         className={`${inter.className} text-[1.875rem] text-primary font-bold 2xl:text-[3.75rem]`}
       >
-        Horraires
+        Horaires
       </h2>
       <div className="text-[1.125rem]">
         <div className="text-center">
