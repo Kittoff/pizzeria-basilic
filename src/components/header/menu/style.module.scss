@@ -19,12 +19,6 @@
       path {
         transition: color 0.5s;
       }
-
-      &:hover {
-        path {
-          stroke: var(--color-primary);
-        }
-      }
     }
   }
   .body {
@@ -42,13 +36,6 @@
       transform-origin: top;
       &:last-of-type {
         border-bottom: 1px solid white;
-      }
-      &:hover {
-        .outer {
-          .container {
-            opacity: 1;
-          }
-        }
       }
     }
     a,
