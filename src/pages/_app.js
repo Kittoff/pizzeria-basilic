@@ -11,6 +11,8 @@ import SmoothScroll from "../components/SmoothScroll.jsx";
 import Preloader from "../components/preloader/Preloader.jsx";
 import { useEffect, useState } from "react";
 import Footer from "../components/footer/index.jsx";
+import ScrollToTop from "../utils/scrollToTop/ScrollToTop.jsx";
+
 export default function App({ Component, pageProps, router }) {
   // Using the useLenis hook to get a LenisInstance
   const lenisInstance = useLenis();
@@ -95,6 +97,7 @@ export default function App({ Component, pageProps, router }) {
           </SmoothScroll>
         </div>
       </div>
+      <ScrollToTop />
       <Footer />
     </>
   );
