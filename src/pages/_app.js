@@ -20,8 +20,8 @@ export default function App({ Component, pageProps, router }) {
   return (
     <>
       <AnimatePresence>{isLoading && <Preloader />}</AnimatePresence>
-      <div className="main">
-        <div className="w-[335px] 2xl:max-w-[1500px]  m-auto xl:w-[1260px] lg:w-[1004px] md:w-[748px] sm:w-[635px]">
+      <div className="main min-h-[calc(100vh-130px)] flex flex-col justify-between">
+        <div className="w-[335px] 2xl:max-w-[1500px]  m-auto xl:w-[1260px] lg:w-[1004px] md:w-[748px] sm:w-[635px] flex-grow">
           {/* MENU BURGER */}
           <div className="lg:hidden">
             <BurgerHeader />
