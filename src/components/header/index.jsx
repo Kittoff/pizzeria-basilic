@@ -1,11 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
-import styles from "./style.module.scss";
 import Burger from "./burger";
 import Stairs from "./stairs";
 import Menu from "./menu";
 import { AnimatePresence } from "framer-motion";
 import Image from "next/image.js";
+import { FiPhoneCall } from "react-icons/fi";
 
 export default function Index() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -19,8 +19,8 @@ export default function Index() {
   }, [menuIsOpen]);
 
   return (
-    <div className={styles.header}>
-      <div className={styles.logo}>
+    <div className="relative flex items-center justify-between h-[50px]">
+      <div>
         <Image
           src="/logo.png"
           alt="pizza basilic logo"
@@ -29,12 +29,12 @@ export default function Index() {
         />
         {/* 186 desktop */}
       </div>
-      <div className={styles.nav_phone}>
-        <Image src="/phone2.png" alt="phone icon" width={20} height={20} />
+      <div className="w-[112px] h-[28px] text-[0.625rem] flex items-center flex-initial bg-primary justify-center rounded-[30px] text-bg font-bold ">
+        <FiPhoneCall size={15} className="text-bg mr-2" />
 
         <a href="tel:0557545717">Appelez-nous</a>
       </div>
-      <div className={styles.nav_burger}>
+      <div>
         <Burger
           openMenu={() => {
             setMenuIsOpen(true);

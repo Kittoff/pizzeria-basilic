@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image.js";
 import { useUrlChange } from "@/src/utils/sectionTitle/useUrlChange.jsx";
+import { FaAnglesDown } from "react-icons/fa6";
 
 const Hero = () => {
   const urlChanged = useUrlChange();
@@ -27,7 +28,7 @@ const Hero = () => {
           </div>
 
           <div className="lg:w-40%">
-            <div className="w-[335px] h-[160px]  lg:w-[448px] lg:mt-[50px] lg:-right-[66px] lg:top-[174px] xl:w-[600px]">
+            <div className="w-[335px] h-[160px]  lg:w-[448px] lg:mt-[70px] xl:mt-[50px] lg:-right-[66px] lg:top-[174px] xl:w-[600px]">
               <Image
                 className="mt-[50px]"
                 alt="hero section pizza image"
@@ -40,13 +41,14 @@ const Hero = () => {
         </div>
       </div>
       <div className="lg:mt-[50px]">
-        <Image
+        <FaAnglesDown size={40} className="mt-[21px]" />
+        {/* <Image
           alt=" icon scroll"
           className="mt-[21px]"
           src="/icon-scroll.png"
           width={25}
           height={25}
-        />
+        /> */}
       </div>
     </main>
   );

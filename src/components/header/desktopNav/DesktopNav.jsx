@@ -2,7 +2,7 @@ import { useLenis } from "@studio-freight/react-lenis";
 import Image from "next/image.js";
 import Link from "next/link.js";
 import React, { useRef } from "react";
-
+import { FiPhoneCall } from "react-icons/fi";
 const DesktopNav = () => {
   const lenisInstance = useLenis();
 
@@ -47,13 +47,7 @@ const DesktopNav = () => {
           <Link href="news">Actualités</Link>
         </div>
         <div className=" w-[250px] h-[70px] text-[0.625rem] flex items-center justify-center bg-primary content-center rounded-[30px]">
-          <Image
-            className="mr-2"
-            src="/phone2.png"
-            alt="phone icon"
-            width={27}
-            height={29}
-          />
+          <FiPhoneCall size={27} className="text-bg lg:mr-2 xl:mr-5" />
 
           <a
             className="text-bg text-[25px] font-medium xl:text-[25px] lg:text-[16px]"
