@@ -9,9 +9,7 @@ const Hero = () => {
     <main
       className={` min-h-[80vh] flex flex-col items-center justify-center `}
     >
-      <div
-        className={`pt-[154px] lg:pt-[70px] flex flex-col items-center lg:flex-row `}
-      >
+      <div className={` lg:pt-[70px] flex flex-col items-center lg:flex-row `}>
         <div className="lg:w-60% flex flex-col items-center lg:items-start lg:justify-center lg:flex-row">
           <div className=" lg:-mr-[300px] xl:-mr-[400px] 2xl-mt-[20px]">
             <h1 className="lg:w-full text-[38px] font-bold  xl:w-[80%] lg:text-[66px]  sm:text-[50px]">
