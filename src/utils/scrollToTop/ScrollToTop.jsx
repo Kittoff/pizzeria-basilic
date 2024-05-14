@@ -1,6 +1,5 @@
 import React, { useState, useEffect, forwardRef } from "react";
 import { FaArrowCircleUp } from "react-icons/fa";
-import Magnetic from "../magnetic/Magnetic.jsx";
 
 const ScrollToTop = forwardRef((props, ref) => {
   const [showTopBtn, setShowTopBtn] = useState(false);
@@ -31,12 +30,10 @@ const ScrollToTop = forwardRef((props, ref) => {
   return (
     <div ref={ref} className="top-[50vh] right-0 sm:right-2 fixed">
       {showTopBtn && (
-        <Magnetic>
-          <FaArrowCircleUp
-            className="icon-position icon-style cursor-pointer text-[20px] sm:text-[60px]"
-            onClick={goToTop}
-          />
-        </Magnetic>
+        <FaArrowCircleUp
+          className="icon-position icon-style cursor-pointer text-[20px] sm:text-[60px]"
+          onClick={goToTop}
+        />
       )}
     </div>
   );

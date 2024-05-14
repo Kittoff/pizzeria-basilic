@@ -1,5 +1,4 @@
 "use client";
-import styles from "./style.module.scss";
 
 export default function index({ openMenu }) {
   return (
@@ -7,9 +6,8 @@ export default function index({ openMenu }) {
       onClick={() => {
         openMenu();
       }}
-      className={styles.button}
     >
-      <div className={styles.background}></div>
+      <div></div>
       <svg
         viewBox="-2.4 -2.4 28.80 28.80"
         fill="none"
@@ -40,7 +38,6 @@ export default function index({ openMenu }) {
           ></path>{" "}
         </g>
       </svg>
-      <p>Menu</p>
     </div>
   );
 }

@@ -1,4 +1,3 @@
-// import "@/styles/globals.css";
 import "../globals.css";
 import { AnimatePresence } from "framer-motion";
 import BurgerHeader from "../components/header/index.jsx";

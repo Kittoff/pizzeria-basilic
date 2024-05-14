@@ -5,7 +5,9 @@ import { useUrlChange } from "@/src/utils/sectionTitle/useUrlChange.jsx";
 const Hero = () => {
   const urlChanged = useUrlChange();
   return (
-    <main className={` min-h-[75vh] flex flex-col items-center  `}>
+    <main
+      className={` min-h-[80vh] flex flex-col items-center justify-center `}
+    >
       <div
         className={`pt-[154px] lg:pt-[70px] flex flex-col items-center lg:flex-row `}
       >
@@ -25,7 +27,7 @@ const Hero = () => {
           </div>
 
           <div className="lg:w-40%">
-            <div className="w-[335px] h-[160px]  lg:w-[448px] lg:mt-[70px] lg:-right-[66px] lg:top-[174px] xl:w-[600px]">
+            <div className="w-[335px] h-[160px]  lg:w-[448px] lg:mt-[50px] lg:-right-[66px] lg:top-[174px] xl:w-[600px]">
               <Image
                 className="mt-[50px]"
                 alt="hero section pizza image"

@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./style.module.scss";
 import { motion } from "framer-motion";
-import Image from "next/image.js";
 import { useCollapse } from "react-collapsed";
 import Smile from "../../smile/index.jsx";
 import { Poppins } from "next/font/google";
@@ -83,7 +82,7 @@ const Filter = ({ onUpdateCategoriesMobile }) => {
 
   return (
     <div
-      className={`${styles.collapsible} filter-container relative w-[200px] ${poppins.className}`}
+      className={` filter-container relative w-[200px] ${poppins.className}`}
       ref={collapseRef}
       onClick={() => handleClick()}
     >
@@ -95,15 +94,7 @@ const Filter = ({ onUpdateCategoriesMobile }) => {
         className="bg-primary flex w-[12.5rem] h-[2.875rem] items-center pl-[2.25em] pr-[1.25em] content-between rounded-2xl text-[18px] font-extrabold text-bg select-none z-[1] relative"
         {...getToggleProps()}
       >
-        {/* <div className={styles.test}> */}
         Catégories <Smile startAnimation={startAnimation} />
-        {/* </div> */}
-        {/* <Image
-          alt="filter edit image"
-          src={isExpanded ? "/close.svg" : "/edit.svg"}
-          width={25}
-          height={25}
-        /> */}
       </motion.div>
       <div className="w-[200px]">
         <motion.div
@@ -119,7 +110,7 @@ const Filter = ({ onUpdateCategoriesMobile }) => {
             onClick={(e) => e.stopPropagation()}
           >
             <div
-              className={`${styles.checkboxes} flex items-center bg-customWhite rounded-2xl text-bg w-[200px] mb-2`}
+              className={` flex items-center bg-customWhite rounded-2xl text-bg w-[200px] mb-2 checked:border-e-bg`}
             >
               <input
                 className="box-border w-[20px] h-[20px] m-[6px] p-0 appearance-none bg-transparent outline-none mr-[25px] border-s-bg rounded-full border-2 ring-offset-0 focus:ring-0 focus:shadow-none"

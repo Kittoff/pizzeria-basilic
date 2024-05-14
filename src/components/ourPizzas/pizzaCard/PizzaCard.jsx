@@ -34,8 +34,6 @@ const PizzaCard = ({ name, ingredients, small_price, big_price, price }) => {
           <div className="w-[35px]  h-[50px] 2xl:h-[60px] relative">
             <Image
               src="/delimiter_card.svg"
-              // width={2}
-              // height={10}
               layout="fill"
               alt="pizza card delimiter"
             />

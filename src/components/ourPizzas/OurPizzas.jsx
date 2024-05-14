@@ -9,16 +9,6 @@ import { pizzas } from "./data.js";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router.js";
 
-const variants = {
-  initial: {
-    // backgroundColor: "red",
-  },
-  enter: {
-    // backgroundColor: "blue",
-  },
-  // exit: { backgroundColor: "green" },
-};
-
 const OurPizzas = () => {
   const router = useRouter();
   const [selectedCategories, setSelectedCategories] = useState([]);
@@ -57,7 +47,6 @@ const OurPizzas = () => {
 
   return (
     <motion.div
-      variants={variants}
       initial="initial"
       animate="enter"
       exit="exit"
