@@ -66,10 +66,12 @@ export default function index({ closeMenu }) {
         custom={0.5}
         className={styles.footer}
       >
-        <a>FB</a>
-        <a>IG</a>
-        <a>IN</a>
-        <a>BE</a>
+        <a
+          href="https://www.facebook.com/people/Basilic-Pizzeria/100057529964645/"
+          target="_blank"
+        >
+          FB
+        </a>
       </motion.div>
     </motion.div>
   );
