@@ -29,6 +29,24 @@ export default function Document() {
         />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
+        <meta charSet="UTF-8" />
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
+        <meta property="og:locale" content="en_US" />
+        <meta name="author" content="Christophe LOZANO" />
+        <meta property="og:image:width" content="920" />
+        <meta property="og:image:height" content="470" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          property="og:Pizzeria Basilic"
+          content="Baking delicious pizzas for everyone"
+        />
+        <meta
+          name="keywords"
+          content="pizza, nourriture, délicieux ,restaurant"
+        />
       </Head>
       <body>
         <Main />

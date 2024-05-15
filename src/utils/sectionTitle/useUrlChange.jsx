@@ -15,7 +15,6 @@ export const useUrlChange = () => {
       if (router.asPath !== url) {
         setUrlChanged(true);
         // Log or execute any other code when the URL changes
-        console.log("URL has changed:", url);
       }
     };
 

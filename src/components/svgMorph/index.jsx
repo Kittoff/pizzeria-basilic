@@ -21,7 +21,6 @@ export default function SVGMorph({ paths, startAnimation }) {
         ease: "easeInOut",
       });
     } else if (!startAnimation) {
-      console.log("coucou");
       animation = animate(progress, pathIndex - 1, {
         duration: 1,
         ease: "easeInOut",
