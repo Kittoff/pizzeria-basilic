@@ -6,7 +6,7 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <div className=" text-bg mt-20 bg-primary w-full h-12 text-[12px] font-bold">
+    <div className=" text-bg mt-20 bg-primary w-full h-12 text-[12px] ">
       <div className="h-12 flex justify-around items-center">
         <div>Pizzeria Basilic</div>
         {/* <a target="_blank" href="http://www.youtube.com"> */}
@@ -21,10 +21,10 @@ const Footer = () => {
         {/* </a> */}
         <div className="flex">
           <div className="flex items-center">
-            <FaFacebook /> Partager
+            <FaFacebook className="mr-1" /> Partager
           </div>
           <div className="flex items-center pl-3">
-            <FaSquareXTwitter /> Post
+            <FaSquareXTwitter className="mr-1" /> Post
           </div>
         </div>
       </div>
