@@ -59,7 +59,7 @@ export default function Index() {
             // times: [0, 0.25, 0.5, 0.75, 1],
             duration: 0.2,
             repeat: Infinity,
-            repeatDelay: 4,
+            repeatDelay: 3,
           }}
         >
           <FiPhoneCall size={15} className="text-bg mr-2" />
