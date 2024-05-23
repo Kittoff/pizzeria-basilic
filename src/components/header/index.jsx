@@ -7,12 +7,15 @@ import { AnimatePresence } from "framer-motion";
 import Image from "next/image.js";
 import { FiPhoneCall } from "react-icons/fi";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 export default function Index() {
+  const router = useRouter();
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [showTopBtn, setShowTopBtn] = useState(false);
 
   useEffect(() => {
+    console.log(router.asPath);
     const handleScroll = () => {
       if (window.scrollY > 1050) {
         setShowTopBtn(true);
@@ -21,12 +24,14 @@ export default function Index() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    if (router.asPath === "/") {
+      window.addEventListener("scroll", handleScroll);
+    }
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [router]);
   useEffect(() => {
     if (menuIsOpen) {
       document.body.classList.add("overflow-y-hidden");
