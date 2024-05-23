@@ -15,7 +15,6 @@ export default function Index() {
   const [showTopBtn, setShowTopBtn] = useState(false);
 
   useEffect(() => {
-    console.log(router.asPath);
     const handleScroll = () => {
       if (window.scrollY > 1050) {
         setShowTopBtn(true);
