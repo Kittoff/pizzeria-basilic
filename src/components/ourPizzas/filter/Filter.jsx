@@ -39,6 +39,12 @@ const Filter = ({ onUpdateCategoriesMobile }) => {
   const collapseRef = useRef();
 
   const handleCategoryToggle = (category) => {
+    if (
+      selectedCategories.length === 1 &&
+      selectedCategories.includes(category)
+    ) {
+      return;
+    }
     const updatedCategories = selectedCategories.includes(category)
       ? selectedCategories.filter((cat) => cat !== category)
       : [...selectedCategories, category];
@@ -51,7 +57,7 @@ const Filter = ({ onUpdateCategoriesMobile }) => {
   };
 
   const handleAllToggle = () => {
-    const updatedCategories = allSelected ? [] : defaultCategories;
+    const updatedCategories = allSelected ? ["Classiques"] : defaultCategories;
     setSelectedCategories(updatedCategories);
     onUpdateCategoriesMobile(updatedCategories);
     setAllSelected(!allSelected);
