@@ -28,7 +28,7 @@ const menu = [
 export default function index({ closeMenu }) {
   return (
     <motion.div
-      className={styles.menu}
+      className={`${styles.menu} bg-bg`}
       variants={opacity}
       initial="initial"
       animate="enter"

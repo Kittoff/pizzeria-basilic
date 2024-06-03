@@ -46,31 +46,3 @@ export function useBreakpoints() {
 
   return breakpoints;
 }
-
-// // -------------------------
-// // useBreakpoints usage
-
-// const Test = () => {
-//   const { isXs, isSm, isMd, isLg, active } = useBreakpoints();
-//   return (
-//     <div style={{ backgroundColor: "red" }}>
-//       <span>active: {active}</span>
-//       <div>{isXs && <div>xs</div>}</div>
-//       <div>{isSm && <div>sm</div>}</div>
-//       <div>{isMd && <div>md</div>}</div>
-//       <div>{isLg && <div>lg</div>}</div>
-//     </div>
-//   );
-// };
-
-// // -------------------------
-// // useMediaQuery usage
-
-// const Test = () => {
-//   let isPageWide = useMediaQuery("(min-width: 800px)");
-//   return (
-//     <div style={{ backgroundColor: "red" }}>
-//       {isPageWide ? "page wide" : "not wide"}
-//     </div>
-//   );
-// };

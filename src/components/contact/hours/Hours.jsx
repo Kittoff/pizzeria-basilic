@@ -19,7 +19,7 @@ const Hours = () => {
           </div>
         </div>
       </div>
-      <div className="text-2xl text-primary font-bold">
+      <div className="text-xs sm:text-2xl text-primary font-bold">
         Fermé samedi et dimanche
       </div>
     </div>

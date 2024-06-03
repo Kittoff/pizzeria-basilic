@@ -6,7 +6,7 @@ import { text, curve, translate, childrenIn } from "./anim";
 import styles from "./style.module.scss";
 
 const routes = {
-  "/#pizza": "Nos Pizzas",
+  "/#pizzas": "Nos Pizzas",
   "/": "Accueil",
   "/news": "Actualités",
   "/contact": "Contact",
@@ -48,8 +48,8 @@ export default function Curve({ children, backgroundColor }) {
       activeRoute = "Accueil"; // Par défaut, si aucune correspondance n'est trouvée
   }
 
-  // Si le chemin actuel est "/#pizza", utiliser "Nos Pizzas" comme texte de route
-  if (currentPath === "/" && router.asPath.includes("#pizza")) {
+  // Si le chemin actuel est "/#pizzas", utiliser "Nos Pizzas" comme texte de route
+  if (currentPath === "/" && router.asPath.includes("#pizzas")) {
     activeRoute = "Nos Pizzas";
   }
   useEffect(() => {
@@ -79,8 +79,6 @@ export default function Curve({ children, backgroundColor }) {
         className={styles.background}
       />
       <motion.p className={`${styles.route} `} {...anim(text)}>
-        {/* {routes[router.route]} */}
-        {/* {routes[router.asPath]} */}
         {activeRoute}
       </motion.p>
       {dimensions.width != null && <SVG {...dimensions} />}

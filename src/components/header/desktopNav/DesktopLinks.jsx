@@ -5,7 +5,7 @@ import React from "react";
 
 const navLinks = [
   { title: "Accueil", href: "/" },
-  { title: "Nos Pizzas", href: "/#pizza" },
+  { title: "Nos Pizzas", href: "/#pizzas" },
   { title: "Nous trouver", href: "/contact" },
   { title: "Actualités", href: "/news" },
 ];
@@ -42,20 +42,7 @@ const DesktopLinks = () => {
             </div>
           );
         })}
-        {/* <div className="border relative">
-          <AnimatedLink title="Accueil" href={"/"} /> */}
-        {/* <Link href="/">Accueil</Link>
-          <Link className="absolute top-10" href="/">
-            Accueil
-          </Link> */}
-        {/* </div> */}
       </div>
-      {/* 
-      <Link href="/#pizza" onClick={() => handleClick("#pizza")}>
-        Nos Pizzas
-      </Link>
-      <Link href="/contact">Nous trouver</Link>
-      <Link href="news">Actualités</Link> */}
     </div>
   );
 };

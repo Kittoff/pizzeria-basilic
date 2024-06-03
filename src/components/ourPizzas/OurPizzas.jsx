@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Image from "next/image.js";
 import Title from "@/src/utils/sectionTitle/Title.jsx";
 import Filter from "./filter/Filter.jsx";
 import PizzaCard from "./pizzaCard/PizzaCard.jsx";
@@ -12,27 +11,21 @@ import { useRouter } from "next/router.js";
 const OurPizzas = () => {
   const router = useRouter();
   const [selectedCategories, setSelectedCategories] = useState([]);
-  const [scrollToPizza, setScrollToPizza] = useState(false); // Ajout d'un état pour le défilement
-  const is2XL = useMediaQuery("(min-width: 1024px)"); // Taille pour 2XL
+  const [scrollToPizza, setScrollToPizza] = useState(false);
+  const is2XL = useMediaQuery("(min-width: 1024px)");
 
   useEffect(() => {
-    // Utilisation de setTimeout pour déclencher le défilement vers #pizza après 3 secondes
-    if (router.asPath === "/#pizza") {
-      const timer = setTimeout(() => {
-        setScrollToPizza(true);
-      }, 500);
-
-      return () => clearTimeout(timer); // Nettoyage du timer lors du démontage du composant
+    if (router.asPath === "/#pizzas") {
+      setScrollToPizza(true);
     }
   }, [router.asPath]);
 
   useEffect(() => {
-    // Défilement vers #pizza
     if (scrollToPizza) {
       const element = document.getElementById("pizza");
       if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "start" }); // Ajout de l'option block pour garantir un défilement vers le haut de l'élément
-        setScrollToPizza(false); // Réinitialisation de l'état après le défilement
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+        setScrollToPizza(false);
       }
     }
   }, [scrollToPizza]);

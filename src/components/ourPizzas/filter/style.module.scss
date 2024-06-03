@@ -1,18 +1,5 @@
 .checkbox_container {
   input[type="checkbox"] {
-    // box-sizing: border-box;
-    // width: 20px;
-    // height: 20px;
-    // margin: 6px;
-    // padding: 0;
-    // border: 2px solid var(--color-bg);
-    // border-radius: 50%;
-    // appearance: none;
-    // background-color: transparent;
-    // outline: none;
-    // transition: outline 0.1s;
-    // margin-right: 25px;
-
     &:checked {
       background-size: cover;
       padding: 2px;

@@ -9,7 +9,7 @@ const Footer = () => {
     <div className=" text-bg mt-20 bg-primary w-full h-12 text-[12px] ">
       <div className="h-12 flex justify-around items-center">
         <div>Pizzeria Basilic</div>
-        {/* <a target="_blank" href="http://www.youtube.com"> */}
+
         <Image
           className="cursor-pointer"
           onClick={goToTop}
@@ -18,7 +18,6 @@ const Footer = () => {
           height={40}
           alt="logo"
         />
-        {/* </a> */}
         <div className="flex">
           <div className="flex items-center">
             <FaFacebook className="mr-1" /> Partager

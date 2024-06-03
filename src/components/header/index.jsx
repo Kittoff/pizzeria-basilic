@@ -48,7 +48,6 @@ export default function Index() {
           width={50}
           height={50}
         />
-        {/* 186 desktop */}
       </div>
       <div
         className={`${
@@ -60,7 +59,6 @@ export default function Index() {
             rotate: [0, 20, 20, 0, 0, 0, 20, 20, 0, 0],
           }}
           transition={{
-            // times: [0, 0.25, 0.5, 0.75, 1],
             duration: 0.2,
             repeat: Infinity,
             repeatDelay: 3,
@@ -79,14 +77,14 @@ export default function Index() {
         />
         <AnimatePresence mode="wait">
           {menuIsOpen && (
-            <>
+            <div>
               <Stairs />
               <Menu
                 closeMenu={() => {
                   setMenuIsOpen(false);
                 }}
               />
-            </>
+            </div>
           )}
         </AnimatePresence>
       </div>
