@@ -5,7 +5,7 @@ import Link from "next/link.js";
 
 const lettersSpace = 100;
 
-const AnimatedLink = ({ title, href }) => {
+const AnimatedLink = ({ title, href, hoveredColor }) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <motion.div
@@ -13,21 +13,37 @@ const AnimatedLink = ({ title, href }) => {
       onMouseLeave={() => setIsHovered(false)}
       className="relative cursor-pointer overflow-hidden"
     >
-      <Link href={href}>
+      {href ? (
+        <Link href={href}>
+          <AnimatedWord
+            title={title}
+            animation={letterAnimation}
+            isHovered={isHovered}
+          />
+        </Link>
+      ) : (
         <AnimatedWord
           title={title}
           animation={letterAnimation}
           isHovered={isHovered}
         />
-      </Link>
-      <div className="absolute top-0 text-primary">
-        <Link href={href}>
+      )}
+      <div className={`absolute top-0 ${hoveredColor}`}>
+        {href ? (
+          <Link href={href}>
+            <AnimatedWord
+              title={title}
+              animation={letterAnimation2}
+              isHovered={isHovered}
+            />
+          </Link>
+        ) : (
           <AnimatedWord
             title={title}
             animation={letterAnimation2}
             isHovered={isHovered}
           />
-        </Link>
+        )}
       </div>
     </motion.div>
   );
@@ -84,6 +100,7 @@ const AnimatedWord = ({ title, animation, isHovered }) => {
           <span key={i}>&nbsp;</span>
         ) : (
           <motion.span
+            key={i}
             variants={animation}
             className="relative inline-block whitespace-nowrap"
           >
@@ -94,4 +111,5 @@ const AnimatedWord = ({ title, animation, isHovered }) => {
     </motion.span>
   );
 };
+
 export default AnimatedLink;

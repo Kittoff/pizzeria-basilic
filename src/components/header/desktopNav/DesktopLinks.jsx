@@ -38,7 +38,11 @@ const DesktopLinks = () => {
         {navLinks.map((link, i) => {
           return (
             <div key={i} className="relative">
-              <AnimatedLink href={link.href} title={link.title} />
+              <AnimatedLink
+                href={link.href}
+                title={link.title}
+                hoveredColor="text-primary"
+              />
             </div>
           );
         })}
