@@ -11,8 +11,8 @@ const Contact = () => {
     <main className={styles.contact}>
       <Curve>
         <Title title="Nous trouver" />
-        <div className="2xl:flex ">
-          <div className={styles.maps_contacts}>
+        <div>
+          <div className="flex">
             <Hours />
             <Contacts />
           </div>
