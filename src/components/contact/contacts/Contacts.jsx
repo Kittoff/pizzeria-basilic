@@ -6,15 +6,6 @@ import { IoIosPin } from "react-icons/io";
 import { useRouter } from "next/router";
 
 const Contacts = () => {
-  const router = useRouter();
-  const currentPath = router.pathname;
-  const [addressIndex, setAddressIndex] = useState(10);
-
-  useEffect(() => {
-    if (currentPath !== "/contact") {
-      setAddressIndex(0);
-    }
-  }, [currentPath]);
   const openGoogleMaps = () => {
     const address = "29 AVENUE DU GENERAL DE GAULLE 33550 LANGOIRAN";
     const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
@@ -22,7 +13,6 @@ const Contacts = () => {
     )}`;
     window.open(googleMapsUrl, "_blank");
   };
-
   // Données des contacts
   const contactsData = [
     {
@@ -58,7 +48,7 @@ const Contacts = () => {
         {contactsData.map((contact, index) => (
           <div
             key={index}
-            className={`flex items-center mb-2 cursor-pointer underline  z-${addressIndex}`}
+            className={`flex items-center mb-2 cursor-pointer underline`}
             onClick={contact.onClick ? contact.onClick : null}
           >
             {typeof contact.iconSrc === "function" ? (
@@ -92,5 +82,4 @@ const Contacts = () => {
     </div>
   );
 };
-
 export default Contacts;
