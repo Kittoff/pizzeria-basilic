@@ -5,6 +5,8 @@ import Image from "next/image";
 import { FiPhoneCall } from "react-icons/fi";
 import { motion } from "framer-motion";
 
+// TODO : scrollTopbutton pour que le bouton callus se décale : voir branche responsive
+
 const Header = () => {
   return (
     <div className="flex justify-between items-center lg:justify-center">
