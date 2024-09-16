@@ -18,7 +18,7 @@ const News = () => {
     <main className="mt-[5.625em] flex justify-center ">
       <Curve>
         <Title title="Actualités" />
-        <h2 className="text-[1.563rem] font-bold text-center 2xl:text-[2rem] text-primary">
+        <h2 className="text-[1.563rem] font-bold text-center 2xl:text-[2rem] text-primary pb-11">
           Ce qu'ils pensent de nous
         </h2>
         <ResponsiveMasonry

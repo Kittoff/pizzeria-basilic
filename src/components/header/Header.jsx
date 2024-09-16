@@ -4,10 +4,12 @@ import DesktopMenu from "./desktopMenu/DesktopMenu";
 import Image from "next/image";
 import { FiPhoneCall } from "react-icons/fi";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 // TODO : scrollTopbutton pour que le bouton callus se décale : voir branche responsive
 
 const Header = () => {
+  const router = useRouter();
   const [showTopBtn, setShowTopBtn] = useState(false);
 
   useEffect(() => {
@@ -27,6 +29,9 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [router]);
+  const handlePhoneClick = () => {
+    window.location.href = "tel:0557545717";
+  };
   return (
     <div className="flex justify-between items-center lg:justify-center">
       <Image
@@ -38,9 +43,10 @@ const Header = () => {
         height={146}
       />
       <div
+        onClick={handlePhoneClick}
         className={`${
-          showTopBtn && " border-2 border-bg z-[2] fixed"
-        } w-[112px] h-[28px] text-[0.625rem] flex items-center flex-initial bg-primary justify-center rounded-[30px] text-bg font-bold `}
+          showTopBtn && "left-2 fixed z-[2]"
+        }  lg:hidden w-[112px] h-[28px] text-[0.625rem] flex items-center flex-initial bg-primary justify-center rounded-[30px] text-bg font-bold `}
       >
         <motion.div
           animate={{
@@ -49,7 +55,7 @@ const Header = () => {
           transition={{
             duration: 0.2,
             repeat: Infinity,
-            repeatDelay: 3,
+            repeatDelay: 2,
           }}
         >
           <FiPhoneCall size={15} className="text-bg mr-2" />
