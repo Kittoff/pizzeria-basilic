@@ -35,7 +35,7 @@ const Header = () => {
   return (
     <div className="flex justify-between items-center lg:justify-center">
       <Image
-        className="w-24 lg:w-[146px]"
+        className="w-16 lg:w-[146px]"
         src="/logo.png"
         alt="pizza basilic logo"
         // layout="responsive"
