@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BurgerHeader from "./burgerMenu/BurgerHeader";
 import DesktopMenu from "./desktopMenu/DesktopMenu";
 import Image from "next/image";
@@ -8,6 +8,25 @@ import { motion } from "framer-motion";
 // TODO : scrollTopbutton pour que le bouton callus se décale : voir branche responsive
 
 const Header = () => {
+  const [showTopBtn, setShowTopBtn] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 1050) {
+        setShowTopBtn(true);
+      } else {
+        setShowTopBtn(false);
+      }
+    };
+
+    if (router.asPath === "/") {
+      window.addEventListener("scroll", handleScroll);
+    }
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [router]);
   return (
     <div className="flex justify-between items-center lg:justify-center">
       <Image
@@ -19,7 +38,9 @@ const Header = () => {
         height={146}
       />
       <div
-        className={`lg:hidden w-[112px] h-[28px] text-[0.625rem] flex items-center flex-initial bg-primary justify-center rounded-[30px] text-bg font-bold `}
+        className={`${
+          showTopBtn && " border-2 border-bg z-[2] fixed"
+        } w-[112px] h-[28px] text-[0.625rem] flex items-center flex-initial bg-primary justify-center rounded-[30px] text-bg font-bold `}
       >
         <motion.div
           animate={{
