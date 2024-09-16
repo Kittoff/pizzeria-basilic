@@ -4,8 +4,10 @@ import Burger from "./Burger";
 import Stairs from "./Stairs";
 import { AnimatePresence } from "framer-motion";
 import Menu from "./Menu";
+import { useRouter } from "next/router";
 
 const BurgerHeader = () => {
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Effect to handle body overflow
@@ -17,12 +19,17 @@ const BurgerHeader = () => {
       // Enable scrolling
       document.body.style.overflow = "unset";
     }
+    // Reset menu state on route change
 
     // Cleanup function to reset overflow on component unmount
     return () => {
       document.body.style.overflow = "unset";
     };
   }, [isMenuOpen]);
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [router.asPath]);
 
   return (
     <div className="lg:hidden">
