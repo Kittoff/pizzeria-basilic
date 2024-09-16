@@ -1,11 +1,9 @@
 import React from "react";
-import styles from "./style.module.scss";
-import { height, background, mountAnim } from "../anim";
 import { motion } from "framer-motion";
-
-export default function index() {
+import { height, background, mountAnim } from "../../../utils/anim";
+const Stairs = () => {
   return (
-    <motion.div className={styles.stairs}>
+    <motion.div className="top-0 left-0 fixed z-[2] h-[100vh] flex transition-all pointer-events-none">
       {[...Array(5)].map((_, index) => {
         return (
           <motion.div
@@ -13,15 +11,17 @@ export default function index() {
             variants={height}
             {...mountAnim}
             custom={4 - index}
-            className={styles.stair}
+            className="w-[20vw] h-full bg-"
           ></motion.div>
         );
       })}
       <motion.div
         variants={background}
         {...mountAnim}
-        className={styles.background}
+        className="w-full h-full absolute bg-black"
       ></motion.div>
     </motion.div>
   );
-}
+};
+
+export default Stairs;

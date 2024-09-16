@@ -1,12 +1,45 @@
-"use-client";
-import React, { useState } from "react";
+import React, { useImperativeHandle, forwardRef, useState } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link.js";
+import Link from "next/link";
 
 const lettersSpace = 100;
 
-const AnimatedLink = ({ title, href, hoveredColor }) => {
+const AnimatedLink = forwardRef(({ title, href, hoveredColor }, ref) => {
   const [isHovered, setIsHovered] = useState(false);
+
+  // Allow parent component to control hover state
+  useImperativeHandle(ref, () => ({
+    setIsHovered,
+  }));
+
+  const letterAnimation = {
+    rest: {
+      y: 0,
+    },
+    hover: {
+      y: -lettersSpace,
+      transition: {
+        duration: 0.3,
+        ease: [0.6, 0.01, 0.05, 0.95],
+        type: "tween",
+      },
+    },
+  };
+
+  const letterAnimation2 = {
+    rest: {
+      y: lettersSpace,
+      transition: {
+        duration: 0.3,
+        ease: [0.6, 0.01, 0.05, 0.95],
+        type: "tween",
+      },
+    },
+    hover: {
+      y: 0,
+    },
+  };
+
   return (
     <motion.div
       onMouseEnter={() => setIsHovered(true)}
@@ -47,50 +80,15 @@ const AnimatedLink = ({ title, href, hoveredColor }) => {
       </div>
     </motion.div>
   );
-};
+});
 
-const letterAnimation = {
-  rest: {
-    y: 0,
-  },
-  hover: {
-    y: -lettersSpace,
-    transition: {
-      duration: 0.3,
-      ease: [0.6, 0.01, 0.05, 0.95],
-      type: "tween",
-    },
-  },
-};
-const letterAnimation2 = {
-  rest: {
-    y: lettersSpace,
-    transition: {
-      duration: 0.3,
-      ease: [0.6, 0.01, 0.05, 0.95],
-      type: "tween",
-    },
-  },
-  hover: {
-    y: 0,
-  },
-};
-const titleAnimation = {
-  rest: {
-    transition: {
-      staggerChildren: 0.003,
-    },
-  },
-  hover: {
-    transition: {
-      staggerChildren: 0.003,
-    },
-  },
-};
 const AnimatedWord = ({ title, animation, isHovered }) => {
   return (
     <motion.span
-      variants={titleAnimation}
+      variants={{
+        rest: { transition: { staggerChildren: 0.003 } },
+        hover: { transition: { staggerChildren: 0.003 } },
+      }}
       initial="rest"
       animate={isHovered ? "hover" : "rest"}
       className="whitespace-nowrap relative"
@@ -112,4 +110,5 @@ const AnimatedWord = ({ title, animation, isHovered }) => {
   );
 };
 
+AnimatedLink.displayName = "AnimatedLink";
 export default AnimatedLink;

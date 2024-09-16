@@ -1,13 +1,8 @@
-"use client";
+import React from "react";
 
-export default function index({ openMenu }) {
+const Burger = ({ openMenu }) => {
   return (
-    <div
-      onClick={() => {
-        openMenu();
-      }}
-    >
-      <div></div>
+    <div onClick={() => openMenu()}>
       <svg
         viewBox="-2.4 -2.4 28.80 28.80"
         fill="none"
@@ -40,4 +35,6 @@ export default function index({ openMenu }) {
       </svg>
     </div>
   );
-}
+};
+
+export default Burger;
