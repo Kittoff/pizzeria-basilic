@@ -13,7 +13,7 @@ module.exports = {
         test: "repeat( auto-fit, minmax(200px, 1fr) )",
       },
       backgroundImage: {
-        "iframe-loader": "url(/loader.png)",
+        // "iframe-loader": "url(/loader.png)",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
